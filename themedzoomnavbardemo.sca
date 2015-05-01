@@ -1,0 +1,139 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Screen    
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZJ122W2Q
+[CLASS] dataenvironment
+[BASECLASS] dataenvironment
+[OBJNAME] Dataenvironment
+[START PROPERTIES]
+DataSource = .NULL.
+Height = 0
+Left = 0
+Name = "Dataenvironment"
+Top = 0
+Width = 0
+[END PROPERTIES]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED4]
+1[END RESERVED4]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZJ122W2R
+[CLASS] form
+[BASECLASS] form
+[OBJNAME] Form1
+[START PROPERTIES]
+AutoCenter = .T.
+Caption = "ThemedZoomNavBar Demo"
+DoCreate = .T.
+Height = 438
+Name = "Form1"
+Width = 627
+_memberdata = <VFPData><memberdata name="otoolbar" display="oToolbar"/></VFPData>
+otoolbar = .NULL.
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+This.oToolbar = newobject('samplethemedzoomnavbartoolbar', 'samples.vcx')
+This.oToolbar.Show()
+
+ENDPROC
+[END METHODS]
+[START RESERVED3]
+_memberdata XML Metadata for customizable properties
+otoolbar
+[END RESERVED3]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZP0L4MZN
+[CLASS] themedzoomnavbar
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedzoomnavbar1
+[PARENT] Form1
+[START PROPERTIES]
+Height = 125
+Left = 0
+Name = "Themedzoomnavbar1"
+Top = 310
+Width = 625
+cntReflected.Name = "cntReflected"
+cntZoom.Name = "cntZoom"
+ctl32_balloontip.Name = "ctl32_balloontip"
+ctl32_balloontip.lblName.Name = "lblName"
+ctl32_balloontip.tmrHide.Name = "tmrHide"
+ctl32_balloontip.tmrShow.Name = "tmrShow"
+imgBackground.Name = "imgBackground"
+shpMouseHandler.Name = "shpMouseHandler"
+stretch = .T.
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+local lcDisableMessage, ;
+	lcImageMessage
+dodefault()
+lcDisableMessage = 'You can disable/enable a button either by passing a ' + ;
+	'parameter to the AddButton and AddStackButton methods or using the ' + ;
+	'SetButtonState and SetStackButtonState methods.'
+lcImageMessage   = 'This shows why you should use 96x96 images. Otherwise, ' + ;
+	'when the image is resized to 96x96, it looks grainy.'
+with This
+	.AddButton('Printers', 'Manage printers.',         'Printer96.png')
+	.AddButton('Display',  'Change display settings.', 'Monitor96.png')
+	.AddButton('Photo',    lcDisableMessage,           'Photo96.png', , , , .F.)
+	.AddButton('Search',   'Search for files.',        'Search96.png')
+	.AddButton('Browser',  'Explore the web.',         'Explorer96.png')
+	.AddButton('Explorer', 'Show files and folders.',  'Folder96.png')
+	.AddButton('Software', lcImageMessage,             'Software32.png')
+
+	.AddButton('Separator')
+
+	.AddButton('Samples', 'Click here to show stacked buttons', 'Wizard96.png')
+	.AddStackButton('Samples', 'Button1', 'Stacked button 1', 'NewWindow32.png')
+	.AddStackButton('Samples', 'Button2', 'Stacked button 2', 'NewWindow32.png')
+	.AddStackButton('Samples', 'Button3', 'Stacked button 3', 'Extensions32.png')
+	.AddStackButton('Samples', 'Button4', 'Stacked button 4', 'Extensions32.png')
+	.AddStackButton('Samples', 'Button5', 'Stacked button 5', 'Extensions32.png')
+	.AddStackButton('Samples', 'Button6', 'Disabled button',  'Worker32.png', , .F.)
+
+	.AddButton('Separator')
+
+	.AddButton('Exit', 'Click here to exit.', 'OpenedDoor96.png')
+endwith
+
+ENDPROC
+PROCEDURE buttonclicked
+lparameters tcName
+if tcName = 'Exit'
+	Thisform.Release()
+else
+	messagebox('You clicked ' + tcName)
+endif tcName = 'Exit'
+
+ENDPROC
+PROCEDURE stackbuttonclicked
+lparameters tcName
+messagebox('You clicked ' + tcName)
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+[EOF]

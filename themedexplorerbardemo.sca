@@ -1,0 +1,147 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Screen    
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZS0N5YRS
+[CLASS] dataenvironment
+[BASECLASS] dataenvironment
+[OBJNAME] Dataenvironment
+[START PROPERTIES]
+DataSource = .NULL.
+Height = 0
+Left = 0
+Name = "Dataenvironment"
+Top = 0
+Width = 0
+[END PROPERTIES]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED4]
+1[END RESERVED4]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZS0N5YRT
+[CLASS] form
+[BASECLASS] form
+[OBJNAME] Form1
+[START PROPERTIES]
+AutoCenter = .T.
+Caption = "ThemedExplorerBar Demo"
+DoCreate = .T.
+Height = 622
+Name = "Form1"
+Width = 434
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZS0NDYV2
+[CLASS] sfcheckbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] checkbox
+[OBJNAME] Sfcheckbox1
+[PARENT] Form1
+[START PROPERTIES]
+Alignment = 0
+Anchor = 8
+Caption = "Make Tasks special"
+Left = 299
+Name = "Sfcheckbox1"
+Top = 37
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+Thisform.Startpageexplorerbar1.oTasks.Type = iif(This.Value, 1, 0)
+Thisform.Startpageexplorerbar1.oTasks.ChangeTheme()
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZS0N5YRU
+[CLASS] startpageexplorerbar
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Startpageexplorerbar1
+[PARENT] Form1
+[START PROPERTIES]
+Left = 0
+Name = "Startpageexplorerbar1"
+Top = 0
+ctl32_scrollbar.Name = "ctl32_scrollbar"
+ctl32_scrollbar.ctlTextBox.Name = "ctlTextBox"
+ctl32_scrollbar.lblname.Name = "lblname"
+imgBackground.Name = "imgBackground"
+oOther.Name = "oOther"
+oOther.cmdFocus.Name = "cmdFocus"
+oOther.cntUserControls.Name = "cntUserControls"
+oOther.cntUserControls.Themedbutton1.Name = "Themedbutton1"
+oOther.cntUserControls.Themedbutton1.cmdFocus.Name = "cmdFocus"
+oOther.cntUserControls.Themedbutton1.imgBackgroundLeft.Name = "imgBackgroundLeft"
+oOther.cntUserControls.Themedbutton1.imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+oOther.cntUserControls.Themedbutton1.imgBackgroundRight.Name = "imgBackgroundRight"
+oOther.cntUserControls.Themedbutton1.imgIcon.Name = "imgIcon"
+oOther.cntUserControls.Themedbutton1.lblCaption.Name = "lblCaption"
+oOther.cntUserControls.Themedbutton1.shpMouseHandler.Name = "shpMouseHandler"
+oOther.cntUserControls.Themedbutton2.Name = "Themedbutton2"
+oOther.cntUserControls.Themedbutton2.cmdFocus.Name = "cmdFocus"
+oOther.cntUserControls.Themedbutton2.imgBackgroundLeft.Name = "imgBackgroundLeft"
+oOther.cntUserControls.Themedbutton2.imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+oOther.cntUserControls.Themedbutton2.imgBackgroundRight.Name = "imgBackgroundRight"
+oOther.cntUserControls.Themedbutton2.imgIcon.Name = "imgIcon"
+oOther.cntUserControls.Themedbutton2.lblCaption.Name = "lblCaption"
+oOther.cntUserControls.Themedbutton2.shpMouseHandler.Name = "shpMouseHandler"
+oOther.imgBackground.Name = "imgBackground"
+oOther.imgPicture.Name = "imgPicture"
+oOther.imgTitle.Name = "imgTitle"
+oOther.lblTitle.Name = "lblTitle"
+oOther.linBottomBorder.Name = "linBottomBorder"
+oOther.linLeftBorder.Name = "linLeftBorder"
+oOther.linRightBorder.Name = "linRightBorder"
+oOther.shpMouseHandler.Name = "shpMouseHandler"
+oRecentProjects.Name = "oRecentProjects"
+oRecentProjects.cmdFocus.Name = "cmdFocus"
+oRecentProjects.cntUserControls.Name = "cntUserControls"
+oRecentProjects.imgBackground.Name = "imgBackground"
+oRecentProjects.imgPicture.Name = "imgPicture"
+oRecentProjects.imgTitle.Name = "imgTitle"
+oRecentProjects.lblTitle.Name = "lblTitle"
+oRecentProjects.linBottomBorder.Name = "linBottomBorder"
+oRecentProjects.linLeftBorder.Name = "linLeftBorder"
+oRecentProjects.linRightBorder.Name = "linRightBorder"
+oRecentProjects.shpMouseHandler.Name = "shpMouseHandler"
+oTasks.Name = "oTasks"
+oTasks.cmdFocus.Name = "cmdFocus"
+oTasks.cntUserControls.Name = "cntUserControls"
+oTasks.cntUserControls.lblHelp.Name = "lblHelp"
+oTasks.cntUserControls.lblNewProject.Name = "lblNewProject"
+oTasks.cntUserControls.lblOpenProject.Name = "lblOpenProject"
+oTasks.cntUserControls.lblOptions.Name = "lblOptions"
+oTasks.imgBackground.Name = "imgBackground"
+oTasks.imgPicture.Name = "imgPicture"
+oTasks.imgTitle.Name = "imgTitle"
+oTasks.lblTitle.Name = "lblTitle"
+oTasks.linBottomBorder.Name = "linBottomBorder"
+oTasks.linLeftBorder.Name = "linLeftBorder"
+oTasks.linRightBorder.Name = "linRightBorder"
+oTasks.shpMouseHandler.Name = "shpMouseHandler"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+Tahoma, 0, 9, 5, 14, 12, 25, 2, 0
+[END PROPERTIES]
+[EOF]

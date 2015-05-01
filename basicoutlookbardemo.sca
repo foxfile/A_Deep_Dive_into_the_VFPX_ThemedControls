@@ -1,0 +1,145 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Screen    
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH11BFLX
+[CLASS] dataenvironment
+[BASECLASS] dataenvironment
+[OBJNAME] Dataenvironment
+[START PROPERTIES]
+DataSource = .NULL.
+Height = 0
+Left = 0
+Name = "Dataenvironment"
+Top = 0
+Width = 0
+[END PROPERTIES]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED4]
+1[END RESERVED4]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH11BFLY
+[CLASS] form
+[BASECLASS] form
+[OBJNAME] frmDemo
+[START PROPERTIES]
+AutoCenter = .T.
+Caption = "Basic Outlook Bar Demo"
+DoCreate = .T.
+Height = 400
+Name = "frmDemo"
+Width = 375
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH11BFLZ
+[CLASS] themedoutlooknavbar
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedoutlooknavbar1
+[PARENT] frmDemo
+[START PROPERTIES]
+Left = 0
+Name = "Themedoutlooknavbar1"
+Panel.Name = "Panel"
+Splitter.Name = "Splitter"
+Splitter.imgBackground.Name = "imgBackground"
+Splitter.imgGripper.Name = "imgGripper"
+Top = 0
+overflowpanel.MenuButton.Name = "MenuButton"
+overflowpanel.MenuButton.imgPicture.Name = "imgPicture"
+overflowpanel.MenuButton.shpTransparent.Name = "shpTransparent"
+overflowpanel.Name = "overflowpanel"
+panelvertical.Name = "panelvertical"
+panelvertical.lblCaption.Name = "lblCaption"
+panes.Anchor = 11
+panes.ErasePage = .T.
+panes.Height = 332
+panes.Name = "panes"
+panes.PageCount = 3
+panes.Pane1.Caption = "Contacts"
+panes.Pane1.Name = "Pane1"
+panes.Pane1.hotkey = C
+panes.Pane1.picture16 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\CONTACTS16.PNG
+panes.Pane1.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\CONTACTS24.PNG
+panes.Pane2.Caption = "Calendar"
+panes.Pane2.Name = "Pane2"
+panes.Pane2.hotkey = l
+panes.Pane2.picture16 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\CALENDAR16.PNG
+panes.Pane2.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\CALENDAR24.PNG
+panes.Pane3.Caption = "Email"
+panes.Pane3.Name = "Pane3"
+panes.Pane3.hotkey = E
+panes.Pane3.picture16 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\EMAIL16.PNG
+panes.Pane3.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\EMAIL24.PNG
+panes.Top = 28
+shrinkbutton.Name = "shrinkbutton"
+title.Name = "title"
+title.imgBackground.Name = "imgBackground"
+title.lblCaption.Name = "lblCaption"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH11BFLX
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel1
+[PARENT] frmDemo.Themedoutlooknavbar1.panes.Pane1
+[START PROPERTIES]
+Caption = "Put contact controls here"
+Left = 27
+Name = "Sflabel1"
+Top = 107
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH11MW3S
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel1
+[PARENT] frmDemo.Themedoutlooknavbar1.panes.Pane2
+[START PROPERTIES]
+Caption = "Put calendar controls here"
+Left = 26
+Name = "Sflabel1"
+Top = 107
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH11MW3T
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel1
+[PARENT] frmDemo.Themedoutlooknavbar1.panes.Pane3
+[START PROPERTIES]
+Caption = "Put email controls here"
+Left = 35
+Name = "Sflabel1"
+Top = 107
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+[EOF]

@@ -1,0 +1,509 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Screen    
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAK
+[CLASS] dataenvironment
+[BASECLASS] dataenvironment
+[OBJNAME] Dataenvironment
+[START PROPERTIES]
+DataSource = .NULL.
+Height = 0
+Left = 0
+Name = "Dataenvironment"
+Top = 0
+Width = 0
+[END PROPERTIES]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED4]
+1[END RESERVED4]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAL
+[CLASS] themedform
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] form
+[OBJNAME] frmPFDemo
+[START PROPERTIES]
+
+AutoCenter = .T.
+Caption = "ThemedTitlePageFrame Demo"
+DoCreate = .T.
+Height = 321
+Name = "frmPFDemo"
+Width = 515
+WindowState = 0
+_memberdata =      303<VFPData><memberdata name="changetheme" type="method" display="ChangeTheme"/><memberdata name="initthemedcontrol" type="method" display="InitThemedControl"/><memberdata name="setenvironment" type="method" display="SetEnvironment"/><memberdata name="loaded" type="property" display="Loaded"/></VFPData>
+imgBackground.Name = "imgBackground"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0OCPHR
+[CLASS] themedtitlepageframe
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] pageframe
+[OBJNAME] pgfDemo
+[PARENT] frmPFDemo
+[START PROPERTIES]
+ErasePage = .T.
+Height = 250
+Left = 10
+Name = "pgfDemo"
+PageCount = 3
+Themedtitlepage3.Caption = "Email"
+Themedtitlepage3.Name = "Themedtitlepage3"
+Themedtitlepage3.TitleContainer.Name = "TitleContainer"
+Themedtitlepage3.TitleContainer.imgTitle.Name = "imgTitle"
+Themedtitlepage3.TitleContainer.imgbackground.Name = "imgbackground"
+Themedtitlepage3.TitleContainer.lblCaption.Name = "lblCaption"
+Themedtitlepage3.TitleContainer.linTitle.Name = "linTitle"
+Themedtitlepage3.UserControls.Name = "UserControls"
+Themedtitlepage3.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\EMAIL24.PNG
+Top = 55
+Width = 490
+themedtitlepage1.Caption = "Calendar"
+themedtitlepage1.Name = "themedtitlepage1"
+themedtitlepage1.TitleContainer.Name = "TitleContainer"
+themedtitlepage1.TitleContainer.imgTitle.Name = "imgTitle"
+themedtitlepage1.TitleContainer.imgbackground.Name = "imgbackground"
+themedtitlepage1.TitleContainer.lblCaption.Name = "lblCaption"
+themedtitlepage1.TitleContainer.linTitle.Name = "linTitle"
+themedtitlepage1.UserControls.Name = "UserControls"
+themedtitlepage1.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\CALENDAR24.PNG
+themedtitlepage2.Caption = "Contacts"
+themedtitlepage2.Name = "themedtitlepage2"
+themedtitlepage2.TitleContainer.Name = "TitleContainer"
+themedtitlepage2.TitleContainer.imgTitle.Name = "imgTitle"
+themedtitlepage2.TitleContainer.imgbackground.Name = "imgbackground"
+themedtitlepage2.TitleContainer.lblCaption.Name = "lblCaption"
+themedtitlepage2.TitleContainer.linTitle.Name = "linTitle"
+themedtitlepage2.UserControls.Name = "UserControls"
+themedtitlepage2.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\THEMEDCONTROLS\IMAGES\CONTACTS24.PNG
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0WKIMI
+[CLASS] sfcheckbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] checkbox
+[OBJNAME] Sfcheckbox1
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Alignment = 0
+Caption = "ThemedButton hot-tracking"
+Left = 16
+Name = "Sfcheckbox1"
+Top = 151
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE InteractiveChange
+with Thisform
+	store iif(This.Value, 1, 0) to .ThemedButton1.Type, .ThemedButton2.Type, ;
+		.ThemedButton3.Type
+*** These calls aren't needed if we're using SFThemedButton
+***	.ThemedButton1.SetImages()
+	.ThemedButton2.SetImages()
+	.ThemedButton3.SetImages()
+endwith
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAK
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel1
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Caption = "Date"
+Left = 15
+Name = "Sflabel1"
+Top = 52
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0OCPHR
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel2
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Caption = "Activity"
+Left = 15
+Name = "Sflabel2"
+Top = 83
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAK
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel3
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Caption = "User"
+Left = 15
+Name = "Sflabel3"
+Top = 113
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAL
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox1
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Height = 22
+Left = 69
+Name = "Sftextbox1"
+Top = 49
+Width = 101
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAK
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox2
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Height = 22
+Left = 70
+Name = "Sftextbox2"
+Top = 80
+Width = 100
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAK
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox3
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Height = 22
+Left = 70
+Name = "Sftextbox3"
+Top = 110
+Width = 100
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V323I
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel1
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage2
+[START PROPERTIES]
+Caption = "First Name"
+Left = 15
+Name = "Sflabel1"
+Top = 52
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V323N
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel2
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage2
+[START PROPERTIES]
+Caption = "Last Name"
+Left = 15
+Name = "Sflabel2"
+Top = 83
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V323R
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel3
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage2
+[START PROPERTIES]
+Caption = "Company"
+Left = 15
+Name = "Sflabel3"
+Top = 113
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V323J
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox1
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage2
+[START PROPERTIES]
+Height = 22
+Left = 81
+Name = "Sftextbox1"
+Top = 49
+Width = 381
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V323O
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox2
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage2
+[START PROPERTIES]
+Height = 22
+Left = 82
+Name = "Sftextbox2"
+Top = 80
+Width = 381
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V323T
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox3
+[PARENT] frmPFDemo.pgfDemo.themedtitlepage2
+[START PROPERTIES]
+Height = 22
+Left = 82
+Name = "Sftextbox3"
+Top = 110
+Width = 381
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V323W
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel1
+[PARENT] frmPFDemo.pgfDemo.Themedtitlepage3
+[START PROPERTIES]
+Caption = "Subject"
+Left = 15
+Name = "Sflabel1"
+Top = 52
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V3241
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel2
+[PARENT] frmPFDemo.pgfDemo.Themedtitlepage3
+[START PROPERTIES]
+Caption = "From"
+Left = 15
+Name = "Sflabel2"
+Top = 83
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V3246
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] Sflabel3
+[PARENT] frmPFDemo.pgfDemo.Themedtitlepage3
+[START PROPERTIES]
+Caption = "To"
+Left = 15
+Name = "Sflabel3"
+Top = 113
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V323Y
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox1
+[PARENT] frmPFDemo.pgfDemo.Themedtitlepage3
+[START PROPERTIES]
+Height = 22
+Left = 69
+Name = "Sftextbox1"
+Top = 49
+Width = 401
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V3242
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox2
+[PARENT] frmPFDemo.pgfDemo.Themedtitlepage3
+[START PROPERTIES]
+Height = 22
+Left = 70
+Name = "Sftextbox2"
+Top = 80
+Width = 100
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0V3247
+[CLASS] sftextbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] textbox
+[OBJNAME] Sftextbox3
+[PARENT] frmPFDemo.pgfDemo.Themedtitlepage3
+[START PROPERTIES]
+Height = 22
+Left = 70
+Name = "Sftextbox3"
+Top = 110
+Width = 100
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0UCK4E
+[CLASS] sfthemedbutton
+[CLASSLOC] sfthemedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedbutton1
+[PARENT] frmPFDemo
+[START PROPERTIES]
+Left = 10
+Name = "Themedbutton1"
+Top = 10
+caption = Calendar
+cmdFocus.Caption = ""
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Height = 24
+imgIcon.Name = "imgIcon"
+imgIcon.Picture = themedcontrols\images\calendar24.png
+imgIcon.Width = 24
+lblCaption.Caption = "Calendar"
+lblCaption.Name = "lblCaption"
+picture24 = c:\development\writing\sessions\themedcontrols\samples\themedcontrols\images\calendar24.png
+shpMouseHandler.Name = "shpMouseHandler"
+shpMouseHandler.ToolTipText = ""
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+Thisform.pgfDemo.ActivePage = 1
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0UCK4G
+[CLASS] themedbutton
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedbutton2
+[PARENT] frmPFDemo
+[START PROPERTIES]
+Left = 175
+Name = "Themedbutton2"
+Top = 10
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Height = 24
+imgIcon.Name = "imgIcon"
+imgIcon.Picture = themedcontrols\images\contacts24.png
+imgIcon.Width = 24
+lblCaption.Caption = "Contacts"
+lblCaption.Name = "lblCaption"
+shpMouseHandler.Name = "shpMouseHandler"
+shpMouseHandler.ToolTipText = ""
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+Thisform.pgfDemo.ActivePage = 2
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0UCK4J
+[CLASS] themedbutton
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedbutton3
+[PARENT] frmPFDemo
+[START PROPERTIES]
+Left = 340
+Name = "Themedbutton3"
+Top = 10
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Height = 24
+imgIcon.Name = "imgIcon"
+imgIcon.Picture = themedcontrols\images\email24.png
+imgIcon.Width = 24
+lblCaption.Caption = "Email"
+lblCaption.Name = "lblCaption"
+shpMouseHandler.Name = "shpMouseHandler"
+shpMouseHandler.ToolTipText = ""
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+Thisform.pgfDemo.ActivePage = 3
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+Tahoma, 0, 9, 5, 14, 12, 25, 2, 0
+[END PROPERTIES]
+[EOF]

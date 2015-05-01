@@ -1,0 +1,567 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Screen    
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7F
+[CLASS] dataenvironment
+[BASECLASS] dataenvironment
+[OBJNAME] Dataenvironment
+[START PROPERTIES]
+DataSource = .NULL.
+Height = 0
+Left = 0
+Name = "Dataenvironment"
+Top = 0
+Width = 0
+[END PROPERTIES]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED4]
+1[END RESERVED4]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7G
+[CLASS] form
+[BASECLASS] form
+[OBJNAME] frmProjectExplorer
+[START PROPERTIES]
+AutoCenter = .T.
+Caption = "Project Explorer"
+DoCreate = .T.
+Height = 400
+Name = "frmProjectExplorer"
+Width = 700
+_memberdata = <VFPData><memberdata name="openproject" display="OpenProject"/><memberdata name="oproject" display="oProject"/><memberdata name="fileselected" display="FileSelected"/></VFPData>
+oproject = .NULL.
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Activate
+return
+
+local lnAnchor
+lnAnchor = This.oNavBar.Anchor
+This.oNavBar.Anchor = 0
+This.oNavBar.Width  = 270
+This.oNavBar.Anchor = lnAnchor
+
+ENDPROC
+PROCEDURE Destroy
+if vartype(This.oProject) = 'O'
+	This.oProject.Close()
+endif vartype(This.oProject) = 'O'
+This.oProject = .NULL.
+dodefault()
+
+ENDPROC
+PROCEDURE Init
+dodefault()
+bindevent(This.oNavBar.Panes.Pane1.oStartPage, 'OpenProject', This, 'OpenProject')
+
+ENDPROC
+PROCEDURE fileselected
+lparameters toFile, ;
+	toClass
+if vartype(toClass) = 'O'
+	loNode = This.oNavBar.Panes.Pages[2].oControl.oSelectedNode
+	This.pgfProperties.ActivePage = 2
+	This.pgfProperties.Themedtitlepage2.Picture24 = 'bmps\' + loNode.Image + '.ico'
+	avcxclasses(laClasses, toFile.ID)
+	lnClass = ascan(laClasses, toClass.ID, -1, -1, 1, 15)
+	This.pgfProperties.Themedtitlepage2.UserControls.lblClass.Caption       = toClass.ID
+	This.pgfProperties.Themedtitlepage2.UserControls.lblBaseClass.Caption   = laClasses[lnClass, 2]
+	This.pgfProperties.Themedtitlepage2.UserControls.lblParentClass.Caption = laClasses[lnClass, 3]
+else
+	do case
+		case toFile.Type = 'P'
+			This.pgfProperties.Themedtitlepage1.Caption   = 'Program'
+			This.pgfProperties.Themedtitlepage1.Picture24 = 'bmps\code.ico'
+		case toFile.Type = 'V'
+			This.pgfProperties.Themedtitlepage1.Caption   = 'Class Library'
+			This.pgfProperties.Themedtitlepage1.Picture24 = 'bmps\classlib.bmp'
+		otherwise
+			This.pgfProperties.Themedtitlepage1.Caption   = 'Form'
+			This.pgfProperties.Themedtitlepage1.Picture24 = 'bmps\form.ico'
+	endcase
+	loFile = This.oProject.Files(toFile.ID)
+	This.pgfProperties.ActivePage = 1
+	This.pgfProperties.Themedtitlepage1.UserControls.lblFileName.Caption = justfname(toFile.ID)
+	This.pgfProperties.Themedtitlepage1.UserControls.lblPath.Caption     = justpath(toFile.ID)
+	This.pgfProperties.Themedtitlepage1.UserControls.lblLastMod.Caption  = transform(loFile.LastModified)
+endif vartype(toClass) = 'O'
+
+ENDPROC
+PROCEDURE openproject
+lparameters tcProjectPath
+if empty(tcProjectPath)
+	lcProjectPath = getfile('PJX', 'Open Project')
+	if empty(lcProjectPath)
+		return
+	endif empty(lcProjectPath)
+else
+	lcProjectPath = tcProjectPath
+endif empty(tcProjectPath)
+
+* Open the project hidden.
+
+modify project (lcProjectPath) nowait noshow
+This.oProject = _vfp.ActiveProject
+
+* Add panels for each type of file if we haven't already.
+
+loNavBar = This.oNavBar
+loPanes  = loNavBar.Panes
+lnWidth  = loPanes.Width  + 4
+lnHeight = loPanes.Height - 28
+if loPanes.PageCount = 1
+	loPage = loNavBar.AddButton('Classes', 'bmps\ClassLib.bmp', ;
+		'bmps\ClassLib.bmp', 'C')
+	loPage.NewObject('oControl', 'ProjectFilesTreeView', 'samples.vcx')
+	with loPage.oControl
+		.cFileType     = 'V'
+		.cImageFile    = 'bmps\classlib.bmp'
+		.lHaveChildren = .T.
+		.Anchor        = 0
+		.Left          = -2
+		.Top           = -2
+		.Width         = lnWidth
+		.Height        = lnHeight
+		.Anchor        = 15
+		.Visible       = .T.
+	endwith
+	loPage = loNavBar.AddButton('Programs', 'bmps\Code.ico', 'bmps\Code.ico', ;
+		'P')
+	loPage.NewObject('oControl', 'ProjectFilesTreeView', 'samples.vcx')
+	with loPage.oControl
+		.cFileType     = 'P'
+		.cImageFile    = 'bmps\Code.ico'
+		.lHaveChildren = .F.
+		.Anchor        = 0
+		.Left          = -2
+		.Top           = -2
+		.Width         = lnWidth
+		.Height        = lnHeight
+		.Anchor        = 15
+		.Visible       = .T.
+	endwith
+	loPage = loNavBar.AddButton('Forms', 'bmps\Form.ico', 'bmps\Form.ico', 'F')
+	loPage.NewObject('oControl', 'ProjectFilesTreeView', 'samples.vcx')
+	with loPage.oControl
+		.cFileType     = 'K'
+		.cImageFile    = 'bmps\Form.ico'
+		.lHaveChildren = .F.
+		.Anchor        = 0
+		.Left          = -2
+		.Top           = -2
+		.Width         = lnWidth
+		.Height        = lnHeight
+		.Anchor        = 15
+		.Visible       = .T.
+	endwith
+endif loPanes.PageCount = 1
+
+* Load each of the TreeViews.
+
+for lnI = 2 to loPanes.PageCount
+	loPanes.Pages[lnI].oControl.LoadTree()
+next loPage
+
+ENDPROC
+[END METHODS]
+[START RESERVED3]
+*fileselected 
+*openproject Opens the specified project
+_memberdata XML Metadata for customizable properties
+oproject A reference to the open project
+[END RESERVED3]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7H
+[CLASS] sfthemedoutlooknavbar
+[CLASSLOC] sfthemedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] oNavBar
+[PARENT] frmProjectExplorer
+[START PROPERTIES]
+Anchor = 15
+Left = 0
+Name = "oNavBar"
+Panel.Name = "Panel"
+Splitter.Name = "Splitter"
+Splitter.imgBackground.Name = "imgBackground"
+Splitter.imgGripper.Name = "imgGripper"
+Top = 0
+overflowpanel.MenuButton.Name = "MenuButton"
+overflowpanel.MenuButton.imgPicture.Name = "imgPicture"
+overflowpanel.MenuButton.shpTransparent.Name = "shpTransparent"
+overflowpanel.Name = "overflowpanel"
+panelvertical.Name = "panelvertical"
+panelvertical.lblCaption.Name = "lblCaption"
+panes.Anchor = 11
+panes.ErasePage = .T.
+panes.Height = 332
+panes.Left = 1
+panes.Name = "panes"
+panes.PageCount = 1
+panes.Pane1.Caption = "Start Page"
+panes.Pane1.Name = "Pane1"
+panes.Pane1.picture16 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\HOME_16.PNG
+panes.Pane1.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\HOME_24.PNG
+panes.Top = 28
+shrinkbutton.Name = "shrinkbutton"
+title.Name = "title"
+title.imgBackground.Name = "imgBackground"
+title.lblCaption.Name = "lblCaption"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE buttonclicked
+lparameters tnNumber, ;
+	tcCaption, ;
+	tcPicture24
+if tnNumber > 1
+	This.Panes.Pages[tnNumber].oControl.NodeClicked()
+endif tnNumber > 1
+
+ENDPROC
+PROCEDURE viewmodechanged
+* When we shrink, we need to hide the explorer bar scroll bar and move the
+* properties pageframe.
+
+lparameters tlShrunk
+if This.SelectedButton = 1 and tlShrunk
+	This.Panes.Pages[1].oStartPage.Ctl32_Scrollbar.ctlVisible = .F.
+endif This.SelectedButton = 1 ...
+Thisform.pgfProperties.Left  = This.Width + 10
+Thisform.pgfProperties.Width = Thisform.Width - Thisform.pgfProperties.Left
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH10IN5L
+[CLASS] startpageexplorerbar
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] oStartPage
+[PARENT] frmProjectExplorer.oNavBar.panes.Pane1
+[START PROPERTIES]
+Height = 332
+Left = 0
+Name = "oStartPage"
+Top = 0
+Width = 197
+ctl32_scrollbar.Name = "ctl32_scrollbar"
+ctl32_scrollbar.ctlTextBox.Name = "ctlTextBox"
+ctl32_scrollbar.lblname.Name = "lblname"
+imgBackground.Name = "imgBackground"
+oOther.Name = "oOther"
+oOther.cmdFocus.Name = "cmdFocus"
+oOther.cntUserControls.Name = "cntUserControls"
+oOther.cntUserControls.Themedbutton1.Name = "Themedbutton1"
+oOther.cntUserControls.Themedbutton1.cmdFocus.Name = "cmdFocus"
+oOther.cntUserControls.Themedbutton1.imgBackgroundLeft.Name = "imgBackgroundLeft"
+oOther.cntUserControls.Themedbutton1.imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+oOther.cntUserControls.Themedbutton1.imgBackgroundRight.Name = "imgBackgroundRight"
+oOther.cntUserControls.Themedbutton1.imgIcon.Name = "imgIcon"
+oOther.cntUserControls.Themedbutton1.lblCaption.Name = "lblCaption"
+oOther.cntUserControls.Themedbutton1.shpMouseHandler.Name = "shpMouseHandler"
+oOther.cntUserControls.Themedbutton2.Name = "Themedbutton2"
+oOther.cntUserControls.Themedbutton2.cmdFocus.Name = "cmdFocus"
+oOther.cntUserControls.Themedbutton2.imgBackgroundLeft.Name = "imgBackgroundLeft"
+oOther.cntUserControls.Themedbutton2.imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+oOther.cntUserControls.Themedbutton2.imgBackgroundRight.Name = "imgBackgroundRight"
+oOther.cntUserControls.Themedbutton2.imgIcon.Name = "imgIcon"
+oOther.cntUserControls.Themedbutton2.lblCaption.Name = "lblCaption"
+oOther.cntUserControls.Themedbutton2.shpMouseHandler.Name = "shpMouseHandler"
+oOther.imgBackground.Name = "imgBackground"
+oOther.imgPicture.Name = "imgPicture"
+oOther.imgTitle.Name = "imgTitle"
+oOther.lblTitle.Name = "lblTitle"
+oOther.linBottomBorder.Name = "linBottomBorder"
+oOther.linLeftBorder.Name = "linLeftBorder"
+oOther.linRightBorder.Name = "linRightBorder"
+oOther.shpMouseHandler.Name = "shpMouseHandler"
+oRecentProjects.Name = "oRecentProjects"
+oRecentProjects.cmdFocus.Name = "cmdFocus"
+oRecentProjects.cntUserControls.Name = "cntUserControls"
+oRecentProjects.imgBackground.Name = "imgBackground"
+oRecentProjects.imgPicture.Name = "imgPicture"
+oRecentProjects.imgTitle.Name = "imgTitle"
+oRecentProjects.lblTitle.Name = "lblTitle"
+oRecentProjects.linBottomBorder.Name = "linBottomBorder"
+oRecentProjects.linLeftBorder.Name = "linLeftBorder"
+oRecentProjects.linRightBorder.Name = "linRightBorder"
+oRecentProjects.shpMouseHandler.Name = "shpMouseHandler"
+oTasks.Name = "oTasks"
+oTasks.cmdFocus.Name = "cmdFocus"
+oTasks.cntUserControls.Name = "cntUserControls"
+oTasks.cntUserControls.lblHelp.Name = "lblHelp"
+oTasks.cntUserControls.lblNewProject.Name = "lblNewProject"
+oTasks.cntUserControls.lblOpenProject.Name = "lblOpenProject"
+oTasks.cntUserControls.lblOptions.Name = "lblOptions"
+oTasks.imgBackground.Name = "imgBackground"
+oTasks.imgPicture.Name = "imgPicture"
+oTasks.imgTitle.Name = "imgTitle"
+oTasks.lblTitle.Name = "lblTitle"
+oTasks.linBottomBorder.Name = "linBottomBorder"
+oTasks.linLeftBorder.Name = "linLeftBorder"
+oTasks.linRightBorder.Name = "linRightBorder"
+oTasks.shpMouseHandler.Name = "shpMouseHandler"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZP0YPAOF
+[CLASS] sfthemedtitlepageframe
+[CLASSLOC] sfthemedcontrols.vcx
+[BASECLASS] pageframe
+[OBJNAME] pgfProperties
+[PARENT] frmProjectExplorer
+[START PROPERTIES]
+Anchor = 13
+ErasePage = .T.
+Height = 400
+Left = 210
+Name = "pgfProperties"
+PageCount = 2
+Top = 0
+Width = 485
+themedtitlepage1.Caption = "Program"
+themedtitlepage1.Name = "themedtitlepage1"
+themedtitlepage1.TitleContainer.Name = "TitleContainer"
+themedtitlepage1.TitleContainer.imgBackground.Name = "imgBackground"
+themedtitlepage1.TitleContainer.imgTitle.Name = "imgTitle"
+themedtitlepage1.TitleContainer.lblCaption.Name = "lblCaption"
+themedtitlepage1.TitleContainer.linTitle.Name = "linTitle"
+themedtitlepage1.UserControls.Name = "UserControls"
+themedtitlepage1.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\BMPS\CODE.ICO
+themedtitlepage2.Caption = "Class"
+themedtitlepage2.Name = "themedtitlepage2"
+themedtitlepage2.TitleContainer.Name = "TitleContainer"
+themedtitlepage2.TitleContainer.imgBackground.Name = "imgBackground"
+themedtitlepage2.TitleContainer.imgTitle.Name = "imgTitle"
+themedtitlepage2.TitleContainer.lblCaption.Name = "lblCaption"
+themedtitlepage2.TitleContainer.linTitle.Name = "linTitle"
+themedtitlepage2.UserControls.Name = "UserControls"
+themedtitlepage2.picture24 = C:\DEVELOPMENT\WRITING\SESSIONS\THEMEDCONTROLS\SAMPLES\BMPS\CLASSLIB.BMP
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE themedtitlepage1.Activate
+local lnAnchor
+if This.UserControls.Width <> This.Parent.Width
+	lnAnchor = This.UserControls.Anchor
+	This.UserControls.Anchor = 0
+	This.UserControls.Width  = This.Parent.Width
+	This.UserControls.Anchor = lnAnchor
+endif This.UserControls.Width <> This.Parent.Width
+
+ENDPROC
+PROCEDURE themedtitlepage2.Activate
+local lnAnchor
+if This.UserControls.Width <> This.Parent.Width
+	lnAnchor = This.UserControls.Anchor
+	This.UserControls.Anchor = 0
+	This.UserControls.Width  = This.Parent.Width
+	This.UserControls.Anchor = lnAnchor
+endif This.UserControls.Width <> This.Parent.Width
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7F
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblFileLabel
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage1.UserControls
+[START PROPERTIES]
+Caption = "Filename:"
+Left = 14
+Name = "lblFileLabel"
+Top = 17
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7G
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblFileName
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage1.UserControls
+[START PROPERTIES]
+Caption = "Filename"
+Left = 104
+Name = "lblFileName"
+Top = 17
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7G
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblLastMod
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage1.UserControls
+[START PROPERTIES]
+Caption = "  /  /"
+Left = 104
+Name = "lblLastMod"
+Top = 67
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7F
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblLastModLabel
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage1.UserControls
+[START PROPERTIES]
+Caption = "Last modified:"
+Left = 14
+Name = "lblLastModLabel"
+Top = 67
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7G
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblPath
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage1.UserControls
+[START PROPERTIES]
+Caption = "Path"
+Left = 104
+Name = "lblPath"
+Top = 42
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7F
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblPathLabel
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage1.UserControls
+[START PROPERTIES]
+Caption = "Path:"
+Left = 14
+Name = "lblPathLabel"
+Top = 42
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7G
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblBaseClass
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage2.UserControls
+[START PROPERTIES]
+Caption = "Base class"
+Left = 104
+Name = "lblBaseClass"
+Top = 42
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7F
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblBaseClassLabel
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage2.UserControls
+[START PROPERTIES]
+Caption = "Base class:"
+Left = 14
+Name = "lblBaseClassLabel"
+Top = 42
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7G
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblClass
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage2.UserControls
+[START PROPERTIES]
+Caption = "Filename"
+Left = 104
+Name = "lblClass"
+Top = 17
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0ZJU7F
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblClassLabel
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage2.UserControls
+[START PROPERTIES]
+Caption = "Class:"
+Left = 14
+Name = "lblClassLabel"
+Top = 17
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZP108W5E
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblParentClass
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage2.UserControls
+[START PROPERTIES]
+Caption = "Parent class"
+Left = 104
+Name = "lblParentClass"
+Top = 67
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZP108W5D
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] lblParentClassLabel
+[PARENT] frmProjectExplorer.pgfProperties.themedtitlepage2.UserControls
+[START PROPERTIES]
+Caption = "Parent class:"
+Left = 14
+Name = "lblParentClassLabel"
+Top = 67
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+[EOF]

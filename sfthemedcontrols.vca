@@ -1,0 +1,489 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Class     
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2RC0PTN1Z
+[CLASS] themedbutton
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] sfthemedbutton
+[START PROPERTIES]
+Name = "sfthemedbutton"
+ToolTipText = ""
+_memberdata =      561<VFPData><memberdata name="enabled" display="Enabled"/><memberdata name="enabled_assign" display="Enabled_Assign"/><memberdata name="caption" display="Caption"/><memberdata name="caption_assign" display="Caption_Assign"/><memberdata name="picture24" display="Picture24"/><memberdata name="picture24_assign" display="Picture24_Assign"/><memberdata name="tooltiptext" display="ToolTipText"/><memberdata name="tooltiptext_assign" display="ToolTipText_Assign"/><memberdata name="type" display="Type"/><memberdata name="type_assign" display="Type_Assign"/></VFPData>
+caption = 
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Name = "imgIcon"
+imgIcon.Stretch = 1
+lblCaption.Name = "lblCaption"
+picture24 = 
+shpMouseHandler.Name = "shpMouseHandler"
+type = 0
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+* Set these properties to themselves so their Assign methods fire.
+
+dodefault()
+if not empty(This.Caption)
+	This.Caption = This.Caption
+endif not empty(This.Caption)
+if not empty(This.Picture24)
+	This.Picture24 = This.Picture24
+endif not empty(This.Picture24)
+if not empty(This.ToolTipText)
+	This.ToolTipText = This.ToolTipText
+endif not empty(This.ToolTipText)
+
+ENDPROC
+PROCEDURE caption_assign
+lparameters tuNewValue
+store tuNewValue to This.Caption, This.lblCaption.Caption
+return tuNewValue
+
+ENDPROC
+PROCEDURE enabled_assign
+lparameters tuNewValue
+This.Enabled = tuNewValue
+This.SetAll('Enabled', tuNewValue)
+
+ENDPROC
+PROCEDURE lblCaption.Init
+* Change the font to Segoe UI in Vista.
+
+dodefault()
+with This
+	if os(3) >= '6' and .FontName = 'Tahoma'
+		.FontName = 'Segoe UI'
+	endif os(3) >= '6' ...
+endwith
+
+ENDPROC
+PROCEDURE picture24_assign
+lparameters tuNewValue
+store tuNewValue to This.Picture24, This.imgIcon.Picture
+return tuNewValue
+
+ENDPROC
+PROCEDURE tooltiptext_assign
+lparameters tuNewValue
+store tuNewValue to This.ToolTipText, This.shpMouseHandler.ToolTipText
+
+ENDPROC
+PROCEDURE type_assign
+lparameters tuNewValue
+This.Type = tuNewValue
+This.SetImages()
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED3]
+*caption_assign 
+*enabled_assign 
+*picture24_assign 
+*tooltiptext_assign 
+*type_assign 
+caption The caption of the button ***.Caption_Assign(luValue)
+picture24 The picture for the button ***.Picture24_Assign(luValue)
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sfthemedbutton
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2SU0O8HF5
+[CLASS] themedcontainer
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] sfthemedcontainer
+[START PROPERTIES]
+Name = "sfthemedcontainer"
+_memberdata = <VFPData><memberdata name="showmenu" display="ShowMenu"/><memberdata name="luseformshortcutmenu" display="lUseFormShortcutMenu"/><memberdata name="shortcutmenu" display="ShortcutMenu"/><memberdata name="omenu" display="oMenu"/></VFPData>
+luseformshortcutmenu = .F.
+omenu = .NULL.
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Destroy
+This.oMenu = .NULL.
+dodefault()
+
+ENDPROC
+PROCEDURE RightClick
+* Display a right-click menu.
+
+This.ShowMenu()
+
+ENDPROC
+PROCEDURE shortcutmenu
+*==============================================================================
+* Method:			ShortcutMenu
+* Status:			Public
+* Purpose:			Populates the specified menu object
+* Author:			Doug Hennig
+* Copyright:		(c) 2009 Stonefield Systems Group Inc.
+* Last revision:	11/23/2009
+* Parameters:		toMenu   - an object reference to a menu object
+*					tcObject - the name of the variable containing the object
+*						reference to this object
+* Returns:			.T.
+* Environment in:	none
+* Environment out:	additional items were added to the menu
+*==============================================================================
+
+lparameters toMenu, ;
+	tcObject
+
+ENDPROC
+PROCEDURE showmenu
+*==============================================================================
+* Method:			ShowMenu
+* Status:			Public
+* Purpose:			Displays a shortcut menu
+* Author:			Doug Hennig
+* Copyright:		(c) 2009 Stonefield Systems Group Inc.
+* Last revision:	11/23/2009
+* Parameters:		none
+* Returns:			.T.
+* Environment in:	SFMenu.VCX can be found
+* Environment out:	a menu may have been displayed
+*==============================================================================
+
+local lcLibrary
+private loObject, ;
+	loForm
+with This
+
+* Define reference to objects we might have menu items from in case the action
+* for a bar is to call a method of an object, which can't be done using "This.
+* Method" since "This" isn't applicable in a menu.
+
+	loObject = This
+	loForm   = Thisform
+
+* Define the menu if it hasn't already been defined.
+
+	lcLibrary = 'SFMenu.vcx'
+	if vartype(.oMenu) <> 'O' and file(lcLibrary)
+		.oMenu = newobject('SFShortcutMenu', lcLibrary)
+	endif vartype(.oMenu) <> 'O' ...
+	if vartype(.oMenu) = 'O'
+
+* If there aren't any bars in the menu, have the ShortcutMenu method populate
+* it.
+
+		if .oMenu.nBarCount = 0
+			.ShortcutMenu(.oMenu, 'loObject')
+
+* If desired, use the form's shortcut menu as well.
+
+			if .lUseFormShortcutMenu and type('Thisform.Name') = 'C' and ;
+				pemstatus(loForm, 'ShortcutMenu', 5)
+				loForm.ShortcutMenu(.oMenu, 'loForm')
+			endif .lUseFormShortcutMenu ...
+		endif .oMenu.nBarCount = 0
+
+* Activate the menu if necessary.
+
+		if .oMenu.nBarCount > 0
+			.oMenu.ShowMenu()
+		endif .oMenu.nBarCount > 0
+	endif vartype(.oMenu) = 'O' ...
+endwith
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED3]
+*shortcutmenu Populates the specified shortcut menu
+*showmenu Display a shortcut menu
+luseformshortcutmenu .T. to use the form's shortcut menu
+omenu A reference to an SFShortcutMenu object
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sfthemedcontainer
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2SA0S5HVB
+[CLASS] themedexplorerbar
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] sfthemedexplorerbar
+[START PROPERTIES]
+Anchor = 15
+Name = "sfthemedexplorerbar"
+ctl32_scrollbar.Name = "ctl32_scrollbar"
+ctl32_scrollbar.ctlTextBox.Name = "ctlTextBox"
+ctl32_scrollbar.lblname.Name = "lblname"
+imgBackground.Name = "imgBackground"
+[END PROPERTIES]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sfthemedexplorerbar
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2SA0S5UQD
+[CLASS] themedexplorergroup
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] sfthemedexplorergroup
+[START PROPERTIES]
+Anchor = 10
+Name = "sfthemedexplorergroup"
+_memberdata = <VFPData><memberdata name="caption" display="Caption"/><memberdata name="caption_assign" display="Caption_Assign"/><memberdata name="picture24" display="Picture24"/><memberdata name="picture24_assign" display="Picture24_Assign"/></VFPData>
+caption = 
+cmdFocus.Name = "cmdFocus"
+cntUserControls.Anchor = 10
+cntUserControls.Name = "cntUserControls"
+imgBackground.Anchor = 10
+imgBackground.Name = "imgBackground"
+imgPicture.Name = "imgPicture"
+imgTitle.Name = "imgTitle"
+lblTitle.Name = "lblTitle"
+linBottomBorder.Anchor = 10
+linBottomBorder.Name = "linBottomBorder"
+linLeftBorder.Name = "linLeftBorder"
+linRightBorder.Anchor = 8
+linRightBorder.Name = "linRightBorder"
+picture24 = 
+shpMouseHandler.Name = "shpMouseHandler"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+* Set these properties to themselves so their Assign methods fire.
+
+if not empty(This.Caption)
+	This.Caption = This.Caption
+endif not empty(This.Caption)
+if not empty(This.Picture24)
+	This.Picture24 = This.Picture24
+endif not empty(This.Picture24)
+dodefault()
+
+ENDPROC
+PROCEDURE caption_assign
+lparameters tuNewValue
+store tuNewValue to This.Caption, This.lblTitle.Caption
+
+ENDPROC
+PROCEDURE lblTitle.Init
+* Change the font to Segoe UI in Vista.
+
+dodefault()
+with This
+	if os(3) >= '6' and .FontName = 'Tahoma'
+		.FontName = 'Segoe UI'
+	endif os(3) >= '6' ...
+endwith
+
+ENDPROC
+PROCEDURE picture24_assign
+lparameters tuNewValue
+store tuNewValue to This.Picture24, This.imgPicture.Picture
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED3]
+*caption_assign 
+*picture24_assign 
+caption The caption for the group
+picture24 The icon for the group
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sfthemedexplorergroup
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2VV0TTWP9
+[CLASS] themedoutlooknavbar
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] sfthemedoutlooknavbar
+[START PROPERTIES]
+Name = "sfthemedoutlooknavbar"
+Panel.Name = "Panel"
+Splitter.Name = "Splitter"
+Splitter.imgBackground.Name = "imgBackground"
+Splitter.imgGripper.Name = "imgGripper"
+_memberdata = <VFPData><memberdata name="ovisible" display="oVisible"/><memberdata name="findinvisiblecontrols" display="FindInvisibleControls"/></VFPData>
+overflowpanel.MenuButton.Name = "MenuButton"
+overflowpanel.MenuButton.imgPicture.Name = "imgPicture"
+overflowpanel.MenuButton.shpTransparent.Name = "shpTransparent"
+overflowpanel.Name = "overflowpanel"
+ovisible = .NULL.
+panelvertical.Name = "panelvertical"
+panelvertical.lblCaption.Name = "lblCaption"
+panes.Anchor = 11
+panes.ErasePage = .T.
+panes.Height = 332
+panes.Name = "panes"
+panes.Top = 28
+shrinkbutton.Name = "shrinkbutton"
+title.Name = "title"
+title.imgBackground.Name = "imgBackground"
+title.lblCaption.Name = "lblCaption"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE addbutton
+lparameters tcCaption, ;
+	tcPicture16, ;
+	tcPicture24, ;
+	tcKey
+dodefault(tcCaption, tcPicture16, tcPicture24, tcKey)
+return This.Panes.Pages[This.Panes.PageCount]
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED3]
+ovisible A collection of objects that aren't visible when the Outlook bar is shrunk
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sfthemedoutlooknavbar
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2SR10Y7X8
+[CLASS] themedtitlepage
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] page
+[OBJNAME] sfthemedtitlepage
+[START PROPERTIES]
+Name = "sfthemedtitlepage"
+TitleContainer.Name = "TitleContainer"
+TitleContainer.imgBackground.Name = "imgBackground"
+TitleContainer.imgTitle.Name = "imgTitle"
+TitleContainer.lblCaption.Name = "lblCaption"
+TitleContainer.linTitle.Name = "linTitle"
+UserControls.Name = "UserControls"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Activate
+local lnAnchor
+if This.UserControls.Width <> This.Parent.Width
+	lnAnchor = This.UserControls.Anchor
+	This.UserControls.Anchor = 0
+	This.UserControls.Width  = This.Parent.Width
+	This.UserControls.Anchor = lnAnchor
+endif This.UserControls.Width <> This.Parent.Width
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sfthemedtitlepage
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2SR10ZP5A
+[CLASS] themedtitlepageframe
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] pageframe
+[OBJNAME] sfthemedtitlepageframe
+[START PROPERTIES]
+ActivePage = 1
+ErasePage = .T.
+Height = 400
+MemberClass = "sfthemedtitlepage"
+MemberClassLibrary = sfthemedcontrols.vcx
+Name = "sfthemedtitlepageframe"
+Sfthemedtitlepage1.Caption = "Sfthemedtitlepage1"
+Sfthemedtitlepage1.Name = "Sfthemedtitlepage1"
+Sfthemedtitlepage1.TitleContainer.Name = "TitleContainer"
+Sfthemedtitlepage1.TitleContainer.imgBackground.Name = "imgBackground"
+Sfthemedtitlepage1.TitleContainer.imgTitle.Name = "imgTitle"
+Sfthemedtitlepage1.TitleContainer.lblCaption.Name = "lblCaption"
+Sfthemedtitlepage1.TitleContainer.linTitle.Name = "linTitle"
+Sfthemedtitlepage1.UserControls.Name = "UserControls"
+Sfthemedtitlepage2.Caption = "Sfthemedtitlepage2"
+Sfthemedtitlepage2.Name = "Sfthemedtitlepage2"
+Sfthemedtitlepage2.TitleContainer.Name = "TitleContainer"
+Sfthemedtitlepage2.TitleContainer.imgBackground.Name = "imgBackground"
+Sfthemedtitlepage2.TitleContainer.imgTitle.Name = "imgTitle"
+Sfthemedtitlepage2.TitleContainer.lblCaption.Name = "lblCaption"
+Sfthemedtitlepage2.TitleContainer.linTitle.Name = "linTitle"
+Sfthemedtitlepage2.UserControls.Name = "UserControls"
+[END PROPERTIES]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sfthemedtitlepageframe
+[EOF]

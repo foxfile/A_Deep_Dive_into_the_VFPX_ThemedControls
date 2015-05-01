@@ -1,0 +1,610 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Screen    
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI0XSME4
+[CLASS] dataenvironment
+[BASECLASS] dataenvironment
+[OBJNAME] Dataenvironment
+[START PROPERTIES]
+DataSource = .NULL.
+Height = 0
+Left = 0
+Name = "Dataenvironment"
+Top = 0
+Width = 0
+[END PROPERTIES]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED4]
+2[END RESERVED4]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI0XSME5
+[CLASS] form
+[BASECLASS] form
+[OBJNAME] frmToolboxDemo
+[START PROPERTIES]
+AutoCenter = .T.
+Caption = "Themed Toolbox Demo"
+DataSession = 2
+DoCreate = .T.
+Height = 461
+Name = "frmToolboxDemo"
+Width = 579
+_memberdata = <VFPData><memberdata name="additem" display="AddItem"/></VFPData>
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+store This.Height to This.MinHeight, This.MaxHeight
+store This.Width  to This.MinWidth,  This.MaxWidth
+
+ENDPROC
+PROCEDURE Load
+set talk off
+create cursor order(QTY I, NAME C(20), PRICE Y, TOTAL Y)
+
+ENDPROC
+PROCEDURE additem
+lparameters toItem
+lcName  = toItem.cName
+lnPrice = toItem.nPrice
+locate for NAME = lcName
+if found()
+	replace QTY with QTY + 1, TOTAL with QTY * PRICE
+else
+	insert into ORDER values (1, lcName, lnPrice, lnPrice)
+endif found()
+This.Refresh()
+
+ENDPROC
+[END METHODS]
+[START RESERVED3]
+*additem Adds an item to the order
+_memberdata XML Metadata for customizable properties
+[END RESERVED3]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15H5LX
+[CLASS] grid
+[BASECLASS] grid
+[OBJNAME] Grid1
+[PARENT] frmToolboxDemo
+[START PROPERTIES]
+Column1.ControlSource = ""
+Column1.FontSize = 16
+Column1.Name = "Column1"
+Column1.Width = 39
+Column2.ControlSource = ""
+Column2.FontSize = 16
+Column2.Name = "Column2"
+Column2.Width = 135
+Column3.ControlSource = ""
+Column3.FontSize = 16
+Column3.Format = "$"
+Column3.InputMask = "99.99"
+Column3.Name = "Column3"
+Column3.Width = 74
+Column4.ControlSource = ""
+Column4.FontSize = 16
+Column4.Format = "$"
+Column4.InputMask = "999.99"
+Column4.Name = "Column4"
+Column4.Width = 77
+ColumnCount = 4
+DeleteMark = .F.
+FontSize = 16
+Height = 335
+Left = 210
+Name = "Grid1"
+Panel = 1
+RecordMark = .F.
+RecordSource = "Order"
+RowHeight = 28
+ScrollBars = 2
+Top = 0
+Width = 350
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ILG2
+[CLASS] header
+[BASECLASS] header
+[OBJNAME] Header1
+[PARENT] frmToolboxDemo.Grid1.Column1
+[START PROPERTIES]
+Caption = "Qty"
+FontSize = 16
+Name = "Header1"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ILG3
+[CLASS] textbox
+[BASECLASS] textbox
+[OBJNAME] Text1
+[PARENT] frmToolboxDemo.Grid1.Column1
+[START PROPERTIES]
+BackColor = 255,255,255
+BorderStyle = 0
+FontSize = 16
+ForeColor = 0,0,0
+Margin = 0
+Name = "Text1"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ILG4
+[CLASS] header
+[BASECLASS] header
+[OBJNAME] Header1
+[PARENT] frmToolboxDemo.Grid1.Column2
+[START PROPERTIES]
+Caption = "Item"
+FontSize = 16
+Name = "Header1"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ILG5
+[CLASS] textbox
+[BASECLASS] textbox
+[OBJNAME] Text1
+[PARENT] frmToolboxDemo.Grid1.Column2
+[START PROPERTIES]
+BackColor = 255,255,255
+BorderStyle = 0
+FontSize = 16
+ForeColor = 0,0,0
+Margin = 0
+Name = "Text1"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ILG6
+[CLASS] header
+[BASECLASS] header
+[OBJNAME] Header1
+[PARENT] frmToolboxDemo.Grid1.Column3
+[START PROPERTIES]
+Alignment = 1
+Caption = "Price "
+FontSize = 16
+Name = "Header1"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ILG7
+[CLASS] textbox
+[BASECLASS] textbox
+[OBJNAME] Text1
+[PARENT] frmToolboxDemo.Grid1.Column3
+[START PROPERTIES]
+BackColor = 255,255,255
+BorderStyle = 0
+FontSize = 16
+ForeColor = 0,0,0
+Margin = 0
+Name = "Text1"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ILG8
+[CLASS] header
+[BASECLASS] header
+[OBJNAME] Header1
+[PARENT] frmToolboxDemo.Grid1.Column4
+[START PROPERTIES]
+Alignment = 1
+Caption = "Total "
+FontSize = 16
+Name = "Header1"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ILG9
+[CLASS] textbox
+[BASECLASS] textbox
+[OBJNAME] Text1
+[PARENT] frmToolboxDemo.Grid1.Column4
+[START PROPERTIES]
+BackColor = 255,255,255
+BorderStyle = 0
+FontSize = 16
+ForeColor = 0,0,0
+Margin = 0
+Name = "Text1"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI0XSME4
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] Label1
+[PARENT] frmToolboxDemo
+[START PROPERTIES]
+Alignment = 1
+BackStyle = 0
+Caption = "Subtotal"
+FontSize = 16
+Height = 27
+Left = 460
+Name = "Label1"
+Top = 355
+Width = 78
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Refresh
+sum TOTAL to lnTotal
+This.Caption = transform(lnTotal, '@$ 999.99')
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI0XSME4
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] Label2
+[PARENT] frmToolboxDemo
+[START PROPERTIES]
+AutoSize = .T.
+BackStyle = 0
+Caption = "Subtotal"
+FontSize = 16
+Height = 27
+Left = 370
+Name = "Label2"
+Top = 355
+Width = 78
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI163R1R
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] Label3
+[PARENT] frmToolboxDemo
+[START PROPERTIES]
+AutoSize = .T.
+BackStyle = 0
+Caption = "Tax"
+FontSize = 16
+Height = 27
+Left = 370
+Name = "Label3"
+Top = 385
+Width = 36
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI163R1S
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] Label4
+[PARENT] frmToolboxDemo
+[START PROPERTIES]
+AutoSize = .T.
+BackStyle = 0
+Caption = "Total"
+FontSize = 16
+Height = 27
+Left = 370
+Name = "Label4"
+Top = 415
+Width = 48
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI163R1T
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] Label5
+[PARENT] frmToolboxDemo
+[START PROPERTIES]
+Alignment = 1
+BackStyle = 0
+Caption = "Tax"
+FontSize = 16
+Height = 27
+Left = 460
+Name = "Label5"
+Top = 385
+Width = 78
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Refresh
+sum TOTAL to lnTotal
+This.Caption = transform(lnTotal * 0.05, '@$ 999.99')
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI163R1U
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] Label6
+[PARENT] frmToolboxDemo
+[START PROPERTIES]
+Alignment = 1
+BackStyle = 0
+Caption = "Total"
+FontSize = 16
+Height = 27
+Left = 460
+Name = "Label6"
+Top = 415
+Width = 78
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Refresh
+sum TOTAL to lnTotal
+This.Caption = transform(lnTotal * 1.05, '@$ 999.99')
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI13IWMR
+[CLASS] themedtoolbox
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedtoolbox1
+[PARENT] frmToolboxDemo
+[START PROPERTIES]
+Left = 0
+Name = "Themedtoolbox1"
+PANES.ErasePage = .T.
+PANES.Height = 398
+PANES.Name = "PANES"
+PANES.PageCount = 3
+PANES.Pane1.Caption = "Entrees"
+PANES.Pane1.Name = "Pane1"
+PANES.Pane2.Caption = "Beverages"
+PANES.Pane2.Name = "Pane2"
+PANES.Pane3.Caption = "Desserts"
+PANES.Pane3.Name = "Pane3"
+PANES.Top = 1
+Top = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI0XSME4
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage1
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane1
+[START PROPERTIES]
+Image1.Height = 64
+Image1.Name = "Image1"
+Image1.Picture = bmps\french_fries.png
+Image1.Width = 64
+LBLNAME.Name = "LBLNAME"
+Label1.Name = "Label1"
+Left = 9
+Name = "Foodimage1"
+Top = 9
+cname = Fries
+nprice = 1.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI0XSME5
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage2
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane1
+[START PROPERTIES]
+Image1.Name = "Image1"
+Image1.Picture = bmps\hamburger_64.png
+Label1.Name = "Label1"
+Left = 99
+Name = "Foodimage2"
+Top = 9
+cname = Burger
+lblName.Name = "lblName"
+nprice = 3.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI13IWMR
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage3
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane1
+[START PROPERTIES]
+Image1.Name = "Image1"
+Image1.Picture = bmps\hot_dog_64.png
+Label1.Name = "Label1"
+Left = 9
+Name = "Foodimage3"
+Top = 181
+cname = Hotdog
+lblName.Name = "lblName"
+nprice = 2.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI0XSME4
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage4
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane1
+[START PROPERTIES]
+Image1.Name = "Image1"
+Image1.Picture = bmps\pizza_slice_64.png
+Label1.Name = "Label1"
+Left = 99
+Name = "Foodimage4"
+Top = 181
+cname = Pizza
+lblName.Name = "lblName"
+nprice = 3.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI157YMS
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage1
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane2
+[START PROPERTIES]
+Image1.Height = 64
+Image1.Name = "Image1"
+Image1.Picture = bmps\coke classic_woops-64.png
+Image1.Width = 64
+Label1.Name = "Label1"
+Left = 9
+Name = "Foodimage1"
+Top = 9
+cname = Coke
+lblName.Name = "lblName"
+nprice = 1.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI157YMT
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage2
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane2
+[START PROPERTIES]
+Image1.Name = "Image1"
+Image1.Picture = bmps\beer_corona-64x64.png
+Label1.Name = "Label1"
+Left = 99
+Name = "Foodimage2"
+Top = 9
+cname = Beer
+lblName.Name = "lblName"
+nprice = 3.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI157YMU
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage3
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane2
+[START PROPERTIES]
+Image1.Name = "Image1"
+Image1.Picture = bmps\soft_drink_64.png
+Label1.Name = "Label1"
+Left = 9
+Name = "Foodimage3"
+Top = 181
+cname = Soda
+lblName.Name = "lblName"
+nprice = 1.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI157YMV
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage4
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane2
+[START PROPERTIES]
+Image1.Name = "Image1"
+Image1.Picture = bmps\coffee_64x64.png
+Label1.Name = "Label1"
+Left = 99
+Name = "Foodimage4"
+Top = 181
+cname = Coffee
+lblName.Name = "lblName"
+nprice = 5.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ANEU
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage1
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane3
+[START PROPERTIES]
+Image1.Height = 64
+Image1.Name = "Image1"
+Image1.Picture = bmps\cake1.png
+Image1.Width = 64
+Label1.Name = "Label1"
+Left = 9
+Name = "Foodimage1"
+Top = 9
+cname = Cake
+lblName.Name = "lblName"
+nprice = 2.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI15ANEV
+[CLASS] foodimage
+[CLASSLOC] samples.vcx
+[BASECLASS] container
+[OBJNAME] Foodimage2
+[PARENT] frmToolboxDemo.Themedtoolbox1.PANES.Pane3
+[START PROPERTIES]
+Image1.Name = "Image1"
+Image1.Picture = bmps\cream choco.png
+Label1.Name = "Label1"
+Left = 99
+Name = "Foodimage2"
+Top = 9
+cname = Bar
+lblName.Name = "lblName"
+nprice = 2.00
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[START PROPERTIES]
+Arial, 0, 16, 9, 25, 19, 56, 5, 1
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+[EOF]

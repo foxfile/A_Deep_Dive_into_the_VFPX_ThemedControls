@@ -1,0 +1,213 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Screen    
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAK
+[CLASS] dataenvironment
+[BASECLASS] dataenvironment
+[OBJNAME] Dataenvironment
+[START PROPERTIES]
+DataSource = .NULL.
+Height = 0
+Left = 0
+Name = "Dataenvironment"
+Top = 0
+Width = 0
+[END PROPERTIES]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED4]
+1[END RESERVED4]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAL
+[CLASS] themedform
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] form
+[OBJNAME] frmThemesDemo
+[START PROPERTIES]
+AutoCenter = .T.
+Caption = "Themes Demo"
+DoCreate = .T.
+Height = 190
+Name = "frmThemesDemo"
+Width = 370
+WindowState = 0
+imgBackground.Name = "imgBackground"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+dodefault()
+This.pgfDemo.Themedtitlepage1.lstThemes.ListIndex = _screen.ThemesManager.ActiveTheme
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0OCPHR
+[CLASS] themedtitlepageframe
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] pageframe
+[OBJNAME] pgfDemo
+[PARENT] frmThemesDemo
+[START PROPERTIES]
+ErasePage = .T.
+Height = 170
+Left = 10
+Name = "pgfDemo"
+Top = 10
+Width = 350
+themedtitlepage1.Caption = "ThemedTitlePageFrame"
+themedtitlepage1.Name = "themedtitlepage1"
+themedtitlepage1.TitleContainer.Name = "TitleContainer"
+themedtitlepage1.TitleContainer.imgBackground.Name = "imgBackground"
+themedtitlepage1.TitleContainer.imgTitle.Name = "imgTitle"
+themedtitlepage1.TitleContainer.lblCaption.Name = "lblCaption"
+themedtitlepage1.TitleContainer.linTitle.Name = "linTitle"
+themedtitlepage1.UserControls.Name = "UserControls"
+themedtitlepage1.picture24 = c:\development\writing\sessions\themedcontrols\samples\themedcontrols\images\contacts24.png
+themedtitlepage2.Name = "themedtitlepage2"
+themedtitlepage2.TitleContainer.Name = "TitleContainer"
+themedtitlepage2.TitleContainer.imgBackground.Name = "imgBackground"
+themedtitlepage2.TitleContainer.imgTitle.Name = "imgTitle"
+themedtitlepage2.TitleContainer.lblCaption.Name = "lblCaption"
+themedtitlepage2.TitleContainer.linTitle.Name = "linTitle"
+themedtitlepage2.UserControls.Name = "UserControls"
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0OGLOO
+[CLASS] sflistbox
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] listbox
+[OBJNAME] lstThemes
+[PARENT] frmThemesDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+FontName = "Tahoma"
+Height = 110
+IntegralHeight = .F.
+Left = 185
+Name = "lstThemes"
+RowSourceType = 0
+Top = 45
+Width = 146
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+dodefault()
+with This
+	.AddItem('Office 2003 Blue')
+	.AddItem('Office 2003 Olive')
+	.AddItem('Office 2003 Silver')
+	.AddItem('Office 2003 Black')
+	.AddItem('Office 2007 Blue')
+	.AddItem('Office 2007 Silver')
+endwith
+
+ENDPROC
+PROCEDURE InteractiveChange
+_screen.ThemesManager.ActiveTheme = This.ListIndex
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAK
+[CLASS] themedbutton
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedbutton1
+[PARENT] frmThemesDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Left = 10
+Name = "Themedbutton1"
+Top = 45
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Height = 16
+imgIcon.Name = "imgIcon"
+imgIcon.Picture = themedcontrols\images\calendar16_enabled.png
+imgIcon.Width = 16
+lblCaption.Caption = "Themed Button 1"
+lblCaption.Name = "lblCaption"
+shpMouseHandler.Name = "shpMouseHandler"
+shpMouseHandler.ToolTipText = ""
+type = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0NZYAK
+[CLASS] themedbutton
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedbutton2
+[PARENT] frmThemesDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Left = 10
+Name = "Themedbutton2"
+Top = 85
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Height = 16
+imgIcon.Name = "imgIcon"
+imgIcon.Picture = themedcontrols\images\calendar16_enabled.png
+imgIcon.Width = 16
+lblCaption.Caption = "Themed Button 2"
+lblCaption.Name = "lblCaption"
+shpMouseHandler.Name = "shpMouseHandler"
+shpMouseHandler.ToolTipText = ""
+type = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZG0OIL7Q
+[CLASS] themedbutton
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedbutton3
+[PARENT] frmThemesDemo.pgfDemo.themedtitlepage1
+[START PROPERTIES]
+Left = 10
+Name = "Themedbutton3"
+Top = 125
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Height = 16
+imgIcon.Name = "imgIcon"
+imgIcon.Picture = themedcontrols\images\calendar16_enabled.png
+imgIcon.Width = 16
+lblCaption.Caption = "Themed Button 3"
+lblCaption.Name = "lblCaption"
+shpMouseHandler.Name = "shpMouseHandler"
+shpMouseHandler.ToolTipText = ""
+type = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+Tahoma, 0, 9, 5, 14, 12, 25, 2, 0
+[END PROPERTIES]
+[EOF]

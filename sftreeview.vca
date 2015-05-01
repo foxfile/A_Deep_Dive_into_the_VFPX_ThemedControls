@@ -1,0 +1,2121 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Class     
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _14L0LS7FM
+[CLASS] sfcontainer
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] container
+[OBJNAME] sftreeviewcontainer
+[START PROPERTIES]
+	<memberdata name="aexpandednodes" type="property" display="aExpandedNodes"/>
+	<memberdata name="calctwipsperpixel" type="method" display="CalcTwipsPerPixel"/>
+	<memberdata name="candrop" type="method" display="CanDrop"/>
+	<memberdata name="canstartdrag" type="method" display="CanStartDrag"/>
+	<memberdata name="ccurrentnodeid" type="property" display="cCurrentNodeID"/>
+	<memberdata name="ccurrentnodekey" type="property" display="cCurrentNodeKey"/>
+	<memberdata name="ccurrentnodetype" type="property" display="cCurrentNodeType"/>
+	<memberdata name="clastnode" type="property" display="cLastNode"/>
+	<memberdata name="createnodeobject" type="method" display="CreateNodeObject"/>
+	<memberdata name="cregistrykey" type="property" display="cRegistryKey"/>
+	<memberdata name="cregistrykeysuffix" type="property" display="cRegistryKeySuffix"/>
+	<memberdata name="deletenode" type="method" display="DeleteNode"/>
+	<memberdata name="getchildnodes" type="method" display="GetChildNodes"/>
+	<memberdata name="getdragdropdataobject" type="method" display="GetDragDropDataObject"/>
+	<memberdata name="getnodeitemfromnode" type="method" display="GetNodeItemFromNode"/>
+	<memberdata name="getnodekey" display="GetNodeKey"/><memberdata name="ccurrentnodetext" display="cCurrentNodeText"/><memberdata name="lloading" display="lLoading"/><memberdata name="beforeselectnode" display="BeforeSelectNode"/><memberdata name="getsinglenode" display="GetSingleNode"/><memberdata name="lrestoreoninit" display="lRestoreOnInit"/><memberdata name="lwindowlocked" display="lWindowLocked"/><memberdata name="lsortrootnodes" display="lSortRootNodes"/><memberdata name="setupimagelist" display="SetupImageList"/></VFPData>
+	<memberdata name="getnodeundermouse" type="method" display="GetNodeUnderMouse"/>
+	<memberdata name="getregistrykey" type="method" display="GetRegistryKey"/>
+	<memberdata name="getrootnodes" type="method" display="GetRootNodes"/>
+	<memberdata name="gettypeandidfromnode" type="method" display="GetTypeAndIDFromNode"/>
+	<memberdata name="goback" type="method" display="GoBack"/>
+	<memberdata name="handledragdrop" type="method" display="HandleDragDrop"/>
+	<memberdata name="insertnode" type="method" display="InsertNode"/>
+	<memberdata name="lallowdelete" type="property" display="lAllowDelete"/>
+	<memberdata name="lallowinsert" type="property" display="lAllowInsert"/>
+	<memberdata name="lallowrename" type="property" display="lAllowRename"/>
+	<memberdata name="lautoloadchildren" type="property" display="lAutoLoadChildren"/>
+	<memberdata name="ldraginprogress" type="property" display="lDragInProgress"/>
+	<memberdata name="lexpanded" type="property" display="lExpanded"/>
+	<memberdata name="lexpandondblclick" type="property" display="lExpandOnDblClick"/>
+	<memberdata name="linitialized" type="property" display="lInitialized"/>
+	<memberdata name="lloadtreeviewatstartup" type="property" display="lLoadTreeviewAtStartup"/>
+	<memberdata name="lneedreload" type="property" display="lNeedReload"/>
+	<memberdata name="loadexpandednode" type="method" display="LoadExpandedNode"/>
+	<memberdata name="loadimages" type="method" display="LoadImages"/>
+	<memberdata name="loadnode" type="method" display="LoadNode"/>
+	<memberdata name="loadnodechildren" type="method" display="LoadNodeChildren"/>
+	<memberdata name="loadtree" type="method" display="LoadTree"/>
+	<memberdata name="locktreeview" type="method" display="LockTreeview"/>
+	<memberdata name="lsaveanchor" type="property" display="lSaveAnchor"/>
+	<memberdata name="lsaveanchor_assign" type="method" display="lSaveAnchor_Assign"/>
+	<memberdata name="ltracknodeclicks" type="property" display="lTrackNodeClicks"/>
+	<memberdata name="lusepathaskey" type="property" display="lUsePathAsKey"/>
+	<memberdata name="nautoexpand" type="property" display="nAutoExpand"/>
+	<memberdata name="nnodeclick" type="property" display="nNodeClick"/>
+	<memberdata name="nodeclicked" type="method" display="NodeClicked"/>
+	<memberdata name="ntimerinterval" type="property" display="nTimerInterval"/>
+	<memberdata name="ntreefactorx" type="property" display="nTreeFactorX"/>
+	<memberdata name="ntreefactory" type="property" display="nTreeFactorY"/>
+	<memberdata name="oselectednode" type="property" display="oSelectedNode"/>
+	<memberdata name="oselectednode_access" type="method" display="oSelectedNode_Access"/>
+	<memberdata name="pushkey" type="method" display="PushKey"/>
+	<memberdata name="removenode" type="method" display="RemoveNode"/>
+	<memberdata name="restoreselectednode" type="method" display="RestoreSelectedNode"/>
+	<memberdata name="saveselectednode" type="method" display="SaveSelectedNode"/>
+	<memberdata name="selectnode" type="method" display="SelectNode"/>
+	<memberdata name="settreeviewbackcolor" type="method" display="SetTreeViewBackColor"/>
+	<memberdata name="startdrag" type="method" display="StartDrag"/>
+	<memberdata name="treeafterlabeledit" type="method" display="TreeAfterLabelEdit"/>
+	<memberdata name="treebeforelabeledit" type="method" display="TreeBeforeLabelEdit"/>
+	<memberdata name="treedblclick" type="method" display="TreeDblClick"/>
+	<memberdata name="treeexpand" type="method" display="TreeExpand"/>
+	<memberdata name="treekeydown" type="method" display="TreeKeyDown"/>
+	<memberdata name="treemousedown" type="method" display="TreeMouseDown"/>
+	<memberdata name="treemouseup" type="method" display="TreeMouseUp"/>
+	<memberdata name="treenodecheck" type="method" display="TreeNodeCheck"/>
+	<memberdata name="treenodeclick" type="method" display="TreeNodeClick"/>
+	<memberdata name="treeolecompletedrag" type="method" display="TreeOLECompleteDrag"/>
+	<memberdata name="treeoledragdrop" type="method" display="TreeOLEDragDrop"/>
+	<memberdata name="treeoledragover" type="method" display="TreeOLEDragOver"/>
+	<memberdata name="treeolestartdrag" type="method" display="TreeOLEStartDrag"/>
+Height = 200
+Name = "sftreeviewcontainer"
+Width = 210
+_memberdata =     5932<VFPData>
+ccurrentnodeid = 
+ccurrentnodekey = 
+ccurrentnodetext = 
+ccurrentnodetype = 
+clastnode = 
+cregistrykey = 
+cregistrykeysuffix = 
+lallowdelete = .F.
+lallowinsert = .F.
+lallowrename = .F.
+lautoloadchildren = .F.
+ldraginprogress = .F.
+lexpanded = .F.
+lexpandondblclick = .F.
+linitialized = .F.
+lloadtreeviewatstartup = .T.
+lneedreload = .F.
+lrestoreoninit = .T.
+lsortrootnodes = .F.
+ltracknodeclicks = .T.
+lusepathaskey = .T.
+lwindowlocked = .F.
+nautoexpand = 0
+nnodeclick = 0
+ntimerinterval = 0
+ntreefactorx = 0
+ntreefactory = 0
+oselectednode = .NULL.
+[END PROPERTIES]
+[START PROTECTED]
+calctwipsperpixel
+getregistrykey
+ldraginprogress
+lexpanded
+lneedreload
+loadnodechildren
+nnodeclick
+ntreefactorx
+ntreefactory
+[END PROTECTED]
+[START METHODS]
+PROCEDURE Destroy
+* Save the last expanded and selected nodes.
+
+This.SaveSelectedNode()
+dodefault()
+
+ENDPROC
+PROCEDURE Init
+local lnAnchor
+with This
+
+* Do the normal behavior.
+
+	dodefault()
+
+* Set AutoYield to .F. so ActiveX events aren't processed when something is
+* executing.
+
+	_vfp.AutoYield = .F.
+
+* Calculate the factors for converting twips to pixels.
+
+	.CalcTwipsPerPixel()
+
+* Adjust the TreeView size (although we use anchoring, it doesn't work until
+* the control is visible.
+
+	lnAnchor      = .oTree.Anchor
+	.oTree.Anchor = 0
+	.oTree.Height = .Height
+	.oTree.Width  = .Width
+	.oTree.Anchor = lnAnchor
+
+* Restore the last expanded and selected nodes if we're supposed to.
+
+	if .lRestoreOnInit
+		.RestoreSelectedNode()
+	endif .lRestoreOnInit
+
+* If we're supposed to, load the TreeView.
+
+	if .lLoadTreeViewAtStartup
+		.LoadTree()
+	endif .lLoadTreeViewAtStartup
+
+* Flag that initialization is done.
+
+	.lInitialized = .T.
+endwith
+
+ENDPROC
+PROCEDURE beforeselectnode
+* Abstract method.
+
+lparameters toNode
+
+ENDPROC
+PROCEDURE calctwipsperpixel
+* Calculate the conversion factor between VFP window units (in pixels) and
+* TreeView window units (in twips).
+
+local liHWnd, ;
+	liHDC, ;
+	liPixelsPerInchX, ;
+	liPixelsPerInchY
+
+* Declare some Windows API functions.
+
+declare integer GetDC         in Win32API ;
+	integer iHDC
+declare integer GetDeviceCaps in Win32API ;
+	integer iHDC, integer iIndex
+declare integer ReleaseDC     in Win32API ;
+	integer ihWnd, integer iHDC
+
+* Get a device context for VFP.
+
+liHWnd = _vfp.hWnd
+liHDC  = GetDC(liHWnd)
+
+* Get the pixels per inch.
+
+liPixelsPerInchX = GetDeviceCaps(liHDC, cnLOG_PIXELS_X)
+liPixelsPerInchY = GetDeviceCaps(liHDC, cnLOG_PIXELS_Y)
+
+* Get the twips per pixel.
+
+with This
+	.nTreeFactorX = cnTWIPS_PER_INCH/liPixelsPerInchX
+	.nTreeFactorY = cnTWIPS_PER_INCH/liPixelsPerInchY
+endwith
+
+* Clean up.
+
+ReleaseDC(liHWnd, liHDC)
+clear dlls GetDC, GetDeviceCaps, ReleaseDC
+
+ENDPROC
+PROCEDURE candrop
+* This method is abstract here, but would typically look at toObject.DragType
+* and toObject.DropType to see if the source has data that the node the mouse
+* is over can accept, and if so, return .T. toData is the OLE drag and drop
+* data object, toNode is a reference to the target node, toObject is an object
+* containing the type and keys of the dragged object and the target node (see
+* GetDragDropDataObject for its properties). tnEffect should also be set based
+* on the type, if any, of drop allowed.
+
+lparameters toData, ;
+	toNode, ;
+	toObject, ;
+	tnEffect, ;
+	tnButton, ;
+	tnShift
+return .F.
+
+ENDPROC
+PROCEDURE canstartdrag
+* Abstract method. This should return .T. if we can start a drag from the
+* selected node.
+
+return .F.
+
+ENDPROC
+PROCEDURE createnodeobject
+local loNodeItem
+loNodeItem = createobject('Empty')
+addproperty(loNodeItem, 'Key',           sys(2015))
+addproperty(loNodeItem, 'Text',          '')
+addproperty(loNodeItem, 'Image',         '')
+addproperty(loNodeItem, 'SelectedImage', '')
+addproperty(loNodeItem, 'ExpandedImage', '')
+addproperty(loNodeItem, 'Sorted',        .F.)
+addproperty(loNodeItem, 'HasChildren',   .F.)
+addproperty(loNodeItem, 'Tag',           '')
+addproperty(loNodeItem, 'ParentKey',     '')
+addproperty(loNodeItem, 'Bold',          .F.)
+return loNodeItem
+
+ENDPROC
+PROCEDURE deletenode
+* Abstract method: called from TreeKeyDown when Delete pressed
+
+ENDPROC
+PROCEDURE enabled_assign
+lparameters tlEnabled
+This.SetTreeViewBackColor(tlEnabled)
+This.Enabled = tlEnabled
+	&& note that we don't DODEFAULT() because we don't want to use SetAll like
+	&& the parent method does; that makes the TreeView "jump" when re-enabling
+	&& the control
+
+ENDPROC
+PROCEDURE getchildnodes
+* This method is abstract here, but would typically look like this:
+* loNodeItem = This.CreateNodeObject()
+* with loNodeItem
+*	.Text          = 'whatever'
+*	.Key           = 'whatever' && only needed if lUsePathAsKey is .F. and you want to assign the key manually
+*	.Image         = 'image name or number'
+*	.SelectedImage = 'selected image name or number; use same as Image if not different'
+*	.ExpandedImage = 'expanded image name or number; use same as Image or blank if not different'
+*	.Sorted        = .T. if it should be sorted
+*	.HasChildren   = .T. if there are any child nodes
+* endwith
+* toCollection.Add(loNodeItem)
+* repeat for other nodes
+
+lparameters tcType, ;
+	tcID, ;
+	toCollection
+
+ENDPROC
+PROCEDURE getdragdropdataobject
+* In a subclass, use DODEFAULT() to get the empty object, then make any changes
+* necessary to the property values.
+
+lparameters toNode, ;
+	toData, ;
+	tnButton, ;
+	tnShift
+local loObject, ;
+	loDataObject, ;
+	lcData, ;
+	lnPos
+loObject = createobject('Empty')
+addproperty(loObject, 'Data',     '')
+addproperty(loObject, 'DropType', '')
+addproperty(loObject, 'DropKey',  '')
+addproperty(loObject, 'DragType', '')
+addproperty(loObject, 'DragKey',  '')
+addproperty(loObject, 'Button',   tnButton)
+addproperty(loObject, 'Shift',    tnShift)
+with loObject
+	if vartype(toNode) = 'O'
+		loDataObject = This.GetTypeAndIDFromNode(toNode)
+		.DropType    = loDataObject.Type
+		.DropKey     = loDataObject.ID
+	endif vartype(toNode) = 'O'
+	try
+		do case
+			case toData.GetFormat(CF_MAX)
+				lcData    = toData.GetData(CF_MAX)
+				lnPos     = at(':', lcData)
+				.Data     = lcData
+				.DragType = '' + left(lcData, lnPos - 1)
+				.DragKey  = '' + substr(lcData, lnPos + 1)
+			case toData.GetFormat(CF_TEXT)
+				lcData    = toData.GetData(CF_TEXT)
+				.Data     = lcData
+				.DragType = 'Text'
+			case toData.GetFormat(CF_FILES)
+				addproperty(loObject, 'Files', createobject('Collection'))
+				for each lcFile in toData.Files
+					loObject.Files.Add(lcFile)
+				next lcFile
+				.DragType = 'ImportFiles'
+		endcase
+	catch
+	endtry
+endwith
+return loObject
+
+ENDPROC
+PROCEDURE getnodeitemfromnode
+* Return a node item object from the specified TreeView node.
+
+lparameters toNode
+loNodeItem = This.CreateNodeObject()
+with loNodeItem
+	.Key           = toNode.Key
+	.Text          = toNode.Text
+	.Image         = toNode.Image
+	.SelectedImage = toNode.SelectedImage
+	.Sorted        = toNode.Sorted
+	.HasChildren   = toNode.Children > 0
+endwith
+return loNodeItem
+
+ENDPROC
+PROCEDURE getnodekey
+* Abstract method.
+
+lparameters tcType, ;
+	tcID
+return ''
+
+ENDPROC
+PROCEDURE getnodeundermouse
+* Return the node the user clicked on. Note that clicking the mouse to the
+* right of a node's caption won't select that node, so we'll check everywhere
+* starting from the leftmost edge of the TreeView to find the node, thanks to
+* code written by Sergey Berezniker.
+
+lparameters tnXCoord, ;
+	tnYCoord
+local loNode
+with This
+	loNode = .oTree.HitTest(tnXCoord * .nTreeFactorX, ;
+		tnYCoord * .nTreeFactorY)
+	if vartype(loNode) <> 'O'
+		for lnI = 1 to tnXCoord
+			loNode = .oTree.HitTest(lnI * .nTreeFactorX, ;
+				tnYCoord * .nTreeFactorY)
+			if vartype(loNode) = 'O'
+				exit
+			endif vartype(loNode) = 'O'
+		next lnI
+	endif vartype(loNode) <> 'O'
+endwith
+return loNode
+
+ENDPROC
+PROCEDURE getregistrykey
+local lcKey
+with This
+	do case
+
+* If we have a Registry key and a suffix to use, do so.
+
+		case not empty(.cRegistryKey) and not empty(.cRegistryKeySuffix)
+			lcKey = addbs(.cRegistryKey) + .cRegistryKeySuffix
+
+* If we have a Registry key to use, do so.
+
+		case not empty(.cRegistryKey)
+			lcKey = .cRegistryKey
+
+* If our form has a Registry key and we're supposed to add a suffix to it, do
+* so.
+
+		case pemstatus(Thisform, 'cRegistryKey', 5) and ;
+			not empty(Thisform.cRegistryKey)
+			lcKey = addbs(Thisform.cRegistryKey) + .cRegistryKeySuffix
+
+* We don't have a key.
+
+		otherwise
+			lcKey = ''
+	endcase
+endwith
+return lcKey
+
+ENDPROC
+PROCEDURE getrootnodes
+* This method is abstract here, but would typically look like this:
+* loNodeItem = This.CreateNodeObject()
+* with loNodeItem
+*	.Text          = 'whatever'
+*	.Key           = 'whatever' && only needed if lUsePathAsKey is .F. and you want to assign the key manually
+*	.Image         = 'image name or number'
+*	.SelectedImage = 'selected image name or number; use same as Image if not different'
+*	.ExpandedImage = 'expanded image name or number; use same as Image or blank if not different'
+*	.Sorted        = .T. if it should be sorted
+*	.HasChildren   = .T. if there are any child nodes
+* endwith
+* toCollection.Add(loNodeItem)
+* repeat for other nodes
+
+lparameters toCollection
+
+ENDPROC
+PROCEDURE getsinglenode
+* This method is abstract here, but would typically look like this:
+* loNodeItem = This.CreateNodeObject()
+* with loNodeItem
+*	.Text          = 'whatever'
+*	.Key           = 'whatever' && only needed if lUsePathAsKey is .F. and you want to assign the key manually
+*	.Image         = 'image name or number'
+*	.SelectedImage = 'selected image name or number; use same as Image if not different'
+*	.ExpandedImage = 'expanded image name or number; use same as Image or blank if not different'
+*	.Sorted        = .T. if it should be sorted
+*	.HasChildren   = .T. if there are any child nodes
+* endwith
+
+ENDPROC
+PROCEDURE gettypeandidfromnode
+* In a subclass, use DODEFAULT() to get the empty object, then fill in the Type
+* and ID properties.
+
+lparameters toNode
+local loObject
+loObject = createobject('Empty')
+addproperty(loObject, 'Type', '')
+addproperty(loObject, 'ID',   '')
+return loObject
+
+ENDPROC
+PROCEDURE goback
+* Go back to the previously selected node by popping it off the stack. If the
+* node no longer exists, no harm done since SelectNode won't do anything in
+* that case.
+
+local lcKey
+lcKey = This.oStack.Pop()
+This.SelectNode(lcKey, .T.)
+
+ENDPROC
+PROCEDURE handledragdrop
+* This method is abstract here, but would typically call toData.GetFormat and
+* toData.GetData to get the data from the source object and somehow apply it to
+* the node it was dropped on, toNode. toObject is an object containing the type
+* and keys of the dragged object and the target node (see GetDragDropDataObject
+* for its properties).
+
+lparameters toData, ;
+	toNode, ;
+	toObject
+
+ENDPROC
+PROCEDURE insertnode
+* Abstract method
+
+ENDPROC
+PROCEDURE loadexpandednode
+lparameters toNode
+local llLocked
+with This
+	llLocked = .lWindowLocked
+	.LockTreeView(.T.)
+	if type('toNode.Child.Key') = 'C'
+		.oTree.Nodes.Remove(toNode.Child.Key)
+	endif type('toNode.Child.Key') = 'C'
+	.LoadNodeChildren(toNode)
+	if not llLocked
+		.LockTreeView()
+	endif not llLocked
+endwith
+
+ENDPROC
+PROCEDURE loadimages
+* Abstract method to load the images for the ImageList control. Typically, code
+* will look like this:
+*
+* with This.oImageList
+*	.ListImages.Add(1, 'Image1Key', loadpicture('SomeImageFile'))
+*	.ListImages.Add(2, 'Image2Key', loadpicture('SomeImageFile'))
+* endwith
+*
+* Set ImageHeight and ImageWidth of This.oImageList to appropriate values if
+* the images are not 16x16.
+
+ENDPROC
+PROCEDURE loadnode
+lparameters toNodeItem, ;
+	tcParentKey
+local loNode, ;
+	lcSeparator, ;
+	llExpand
+
+* Add the node to the TreeView (unless it's already there). If we're supposed
+* to, set the node's Key to its FullPath so we can use FullPath to locate the
+* Key.
+
+with toNodeItem
+	do case
+		case type('This.oTree.Nodes[.Key]') = 'O'
+			loNode = This.oTree.Nodes[.Key]
+		case empty(tcParentKey)
+			loNode = This.oTree.Nodes.Add(, 1, .Key, .Text, .Image)
+		otherwise
+			loNode = This.oTree.Nodes.Add(tcParentKey, 4, .Key, .Text, .Image)
+	endcase
+	if not empty(.SelectedImage)
+		loNode.SelectedImage = .SelectedImage
+	endif not empty(.SelectedImage)
+	if not empty(.ExpandedImage)
+		loNode.ExpandedImage = .ExpandedImage
+	endif not empty(.ExpandedImage)
+	loNode.Sorted = .Sorted
+	loNode.Tag    = .Tag
+	loNode.Bold   = .Bold
+	if This.lUsePathAsKey
+		store loNode.FullPath to loNode.Key, toNodeItem.Key
+	endif This.lUsePathAsKey
+endwith
+with This
+
+* Flag if we're still above the end of the auto-expand limit.
+
+	lcSeparator = .oTree.PathSeparator
+	llExpand    = occurs(lcSeparator, loNode.FullPath) <= .nAutoExpand - 1
+	do case
+
+* If the node doesn't have any children, we don't have anything else to do.
+
+		case not toNodeItem.HasChildren
+
+* If we're supposed to load all child nodes or we're not at the end of the
+* auto-expand limit, let's load the children.
+
+		case .lAutoLoadChildren or llExpand
+			.LoadNodeChildren(loNode)
+
+* This node has children but we're not going to load them, so we'll add a
+* "loading" node so the + appears properly.
+
+		case loNode.Children = 0
+			.oTree.Nodes.Add(loNode.Key, 4, sys(2015), ccLOADING)
+	endcase
+endwith
+return loNode
+
+ENDPROC
+PROCEDURE loadnodechildren
+lparameters toNode
+local loChildNodesCollection as Collection, ;
+	loNodeItem, ;
+	llSorted, ;
+	loChildNode
+with This
+	loChildNodesCollection = createobject('Collection')
+	loNodeItem = .GetTypeAndIDFromNode(toNode)
+	.GetChildNodes(loNodeItem.Type, loNodeItem.ID, loChildNodesCollection)
+	llSorted = toNode.Sorted
+	toNode.Sorted = .F.
+		&& speeds up loading if Sorted set to .F. during load and .T. after
+	for each loChildNode in loChildNodesCollection foxobject
+		.LoadNode(loChildNode, toNode.Key)
+	next loChildNode
+	if llSorted
+		toNode.Sorted = .T.
+	endif llSorted
+endwith
+
+ENDPROC
+PROCEDURE loadtree
+* Load the TreeView.
+
+lparameters tlNoSelect
+local lnExpandedNodes , ;
+	lnI, ;
+	laExpandedNodes[1], ;
+	loNodesCollection, ;
+	loNodeItem, ;
+	lcKey, ;
+	loNode
+
+* There's a bug in the TreeView control: adding a new node or changing the
+* parent of an existing node in a drag operation causes the node to be deleted
+* once the drag is complete. So, we'll do nothing in that case and we'll be
+* called again from tmrReload after the drag is complete.
+
+if This.lDragInProgress
+	This.lNeedReload = .T.
+	return
+endif This.lDragInProgress
+with This
+
+* Flag that we're loading the TreeView; we don't want certain events fired in
+* that case.
+
+	.lLoading = .T.
+
+* Lock the TreeView so we don't see updates until they're done.
+
+	.LockTreeView(.T.)
+
+* Ensure the ImageList is set up.
+
+	.SetupImageList()
+
+* If we have any existing nodes, let's save the keys of the expanded ones and
+* the selected one so we can restore them later, then nuke the nodes. That way,
+* LoadTree can be called to refresh or reload the TreeView.
+
+	with .oTree
+		if .Nodes.Count > 0
+			lnExpandedNodes = 0
+			for lnI = 1 to .Nodes.Count
+				if .Nodes[lnI].Expanded
+					lnExpandedNodes = lnExpandedNodes + 1
+					dimension This.aExpandedNodes[lnExpandedNodes]
+					This.aExpandedNodes[lnExpandedNodes] = .Nodes[lnI].Key
+				endif .Nodes[lnI].Expanded
+			next lnI
+			do case
+				case not empty(This.cLastNode)
+				case vartype(.SelectedItem) = 'O'
+					This.cLastNode = .SelectedItem.Key
+				otherwise
+					This.cLastNode = ''
+			endcase
+			.Nodes.Clear()
+		endif .Nodes.Count > 0
+	endwith
+
+* Get the root nodes and add them to the TreeView.
+
+	loNodesCollection = createobject('Collection')
+	.GetRootNodes(loNodesCollection)
+	for each loNodeItem in loNodesCollection foxobject
+		.LoadNode(loNodeItem)
+	next loNodeItem
+
+* Blank the cCurrent* properties indicating nothing is currently selected
+* (needed in case we don't load any nodes and these properties previously had
+* values from an earlier loaded tree).
+
+	.cCurrentNodeID   = ''
+	.cCurrentNodeKey  = ''
+	.cCurrentNodeText = ''
+	.cCurrentNodeType = ''
+
+* Re-expand any previously expanded nodes.
+
+	with .oTree
+		for lnI = 1 to alen(This.aExpandedNodes)
+			lcKey = This.aExpandedNodes[lnI]
+			if type('.Nodes[lcKey]') = 'O'
+				This.TreeExpand(.Nodes[lcKey], .T.)
+			endif type('.Nodes[lcKey]') = 'O'
+		next lnI
+	endwith
+
+* Flag that we're done loading the TreeView.
+
+	.lLoading = .F.
+
+* If we're supposed to re-select the node selected last time and that node
+* still exists, select it. Otherwise, select the first node.
+
+	loNode = .NULL.
+	do case
+		case tlNoSelect
+		case not empty(.cLastNode) and type('.oTree.Nodes[.cLastNode]') = 'O'
+			loNode = .oTree.Nodes[.cLastNode]
+		case .oTree.Nodes.Count > 0
+			loNode = .oTree.Nodes[1]
+	endcase
+	if not isnull(loNode)
+		.SelectNode(loNode)
+	endif not isnull(loNode)
+
+* Reset cLastNode so we aren't fooled by its value when LoadTree is called
+* again.
+
+	.cLastNode = ''
+
+* Sort the tree if we're supposed to.
+
+	.oTree.Sorted = .lSortRootNodes
+
+* Unlock the TreeView.
+
+	.LockTreeView()
+endwith
+
+ENDPROC
+PROCEDURE locktreeview
+lparameters tlLock
+declare integer LockWindowUpdate in Win32API ;
+	integer nHandle
+do case
+	case tlLock and This.lWindowLocked
+	case tlLock
+		lnStatus = LockWindowUpdate(This.oTree.hWnd)
+*** Can check for lnStatus = 0 which means a window was already locked
+		This.lWindowLocked = .T.
+	otherwise
+		LockWindowUpdate(0)
+		This.lWindowLocked = .F.
+endcase
+return
+
+ENDPROC
+PROCEDURE nodeclicked
+* Abstract method.
+
+lparameters tlSameNode
+
+ENDPROC
+PROCEDURE oselectednode_access
+return This.oTree.SelectedItem
+
+ENDPROC
+PROCEDURE pushkey
+lparameters tcKey
+This.oStack.Push(tcKey)
+
+ENDPROC
+PROCEDURE removenode
+* Remove the selected node and select the new node if we're supposed to.
+
+lparameters tcKey, ;
+	tlNoSelect
+local lcKey
+with This
+	lcKey = evl(tcKey, .oTree.SelectedItem.Key)
+	if type('.oTree.Nodes[lcKey]') = 'O'
+		.oTree.Nodes.Remove(lcKey)
+		if not tlNoSelect and vartype(.oTree.SelectedItem) = 'O'
+			.SelectNode(.oTree.SelectedItem)
+		endif not tlNoSelect ...
+	endif type('.oTree.Nodes[lcKey]') = 'O'
+endwith
+
+ENDPROC
+PROCEDURE restoreselectednode
+* Restore cLastNode and aExpandedNodes so the TreeView is restored to its
+* former state.
+
+local lcKey, ;
+	loRegistry, ;
+	lnNode, ;
+	laValues[1], ;
+	lnValues, ;
+	lnI, ;
+	lcValue
+with This
+
+* Blank the current values.
+
+	dimension .aExpandedNodes[1]
+	.aExpandedNodes[1] = ''
+	.cLastNode = ''
+
+* If we have a registry key, restore the settings.
+
+	lcKey = .GetRegistryKey()
+	if not empty(lcKey)
+		loRegistry = newobject('SFRegistry', 'SFRegistry.vcx')
+		.cLastNode = loRegistry.GetKey(lcKey, 'SelectedNode')
+		lnNode     = 0
+		lnValues   = loRegistry.EnumerateKeyValues(lcKey, @laValues)
+		for lnI = 1 to lnValues
+			lcValue = laValues[lnI, 1]
+			if lcValue = 'Expanded'
+				lnNode = lnNode + 1
+				dimension .aExpandedNodes[lnNode]
+				.aExpandedNodes[lnNode] = laValues[lnI, 2]
+			endif lcValue = 'Expanded'
+		next lnI
+	endif not empty(lcKey)
+endwith
+
+ENDPROC
+PROCEDURE saveselectednode
+* Save the selected and all expanded nodes so we can restore our former state
+* next time.
+
+local lcKey, ;
+	loRegistry, ;
+	lnNode, ;
+	lnI, ;
+	loNode, ;
+	laValues[1], ;
+	lnValues, ;
+	lcValue
+with This.oTree
+	lcKey = This.GetRegistryKey()
+	if not empty(lcKey)
+		loRegistry = newobject('SFRegistry', 'SFRegistry.vcx')
+		if vartype(.SelectedItem) = 'O'
+			loRegistry.SetKey(lcKey, 'SelectedNode', .SelectedItem.Key)
+		endif vartype(.SelectedItem) = 'O'
+		lnNode = 0
+		for lnI = 1 to .Nodes.Count
+			loNode = .Nodes(lnI)
+			if loNode.Expanded
+				lnNode = lnNode + 1
+				loRegistry.SetKey(lcKey, 'Expanded' + transform(lnNode), ;
+					loNode.Key)
+			endif loNode.Expanded
+		next lnI
+
+* Remove extra lines from the Registry in case there were more expanded nodes
+* the last time it was written to.
+
+		lnValues = loRegistry.EnumerateKeyValues(lcKey, @laValues)
+		for lnI = 1 to lnValues
+			lcValue = laValues[lnI, 1]
+			if lcValue = 'Expanded' and val(substr(lcValue, 9)) > lnNode
+				loRegistry.DeleteKeyValue(lcKey, lcValue)
+			endif lcValue = 'Expanded' ...
+		next lnI
+	endif not empty(lcKey)
+endwith
+
+ENDPROC
+PROCEDURE selectnode
+* Select the specified node.
+
+lparameters toNode, ;
+	tlNoPush
+local loNode, ;
+	llReturn, ;
+	lcKey, ;
+	loObject
+with This
+
+* If we were passed a key or index rather than a node, try to find the proper
+* node.
+
+	do case
+		case vartype(toNode) = 'O'
+			loNode = toNode
+		case type('.oTree.Nodes[toNode]') = 'O'
+			loNode = .oTree.Nodes[toNode]
+		case type('.oTree.Nodes[upper(toNode)]') = 'O'
+			loNode = .oTree.Nodes[upper(toNode)]
+		otherwise
+			loNode = .NULL.
+	endcase
+
+* If we have a node, ensure any custom pre-selection code succeeds. Note that
+* we save the key of the specified node and then reacquire the node again
+* afterward in case BeforeSelectNode causes the TreeView to be re-loaded.
+
+	llReturn = vartype(loNode) = 'O'
+	if llReturn
+		lcKey    = loNode.Key
+		llReturn = .BeforeSelectNode(loNode)
+		if type('.oTree.Nodes[lcKey]') = 'O'
+			loNode = .oTree.Nodes[lcKey]
+		else
+			llReturn = .F.
+		endif type('.oTree.Nodes[lcKey]') = 'O'
+	endif llReturn
+	if llReturn
+
+* Push the previous node onto the stack if we're supposed to.
+
+		if not tlNoPush and .lTrackNodeClicks and ;
+			vartype(.oTree.SelectedItem) = 'O'
+			.PushKey(.oTree.SelectedItem.Key)
+		endif not tlNoPush ...
+
+* Ensure the node is visible and selected. Prevent two items from being
+* selected by nulling the currently selected item before selecting this one.
+
+		loNode.EnsureVisible()
+		.oTree.SelectedItem = .NULL.
+		loNode.Selected     = .T.
+
+* Set cCurrentNodeType, cCurrentNodeID, cCurrentNodeKey, and cCurrentNodeText
+* to the type, ID, key, and text of the selected node.
+
+		loObject          = .GetTypeAndIDFromNode(loNode)
+		.cCurrentNodeType = loObject.Type
+		.cCurrentNodeID   = loObject.ID
+		.cCurrentNodeKey  = loNode.Key
+		.cCurrentNodeText = loNode.Text
+
+* Call the NodeClicked method for any custom behavior.
+
+		.NodeClicked()
+	endif llReturn
+endwith
+return llReturn
+
+ENDPROC
+PROCEDURE settreeviewbackcolor
+*==============================================================================
+* Program:			SetTreeViewColor
+* Purpose:			Adds a "lightbox" image over the TreeView, visually
+*						indicating that it's unavailable
+* Author:			Doug Hennig, adapted from code written by Bernard Bout
+* Last Revision:	10/07/2009
+* Parameters:		tlEnable - .T. to reenable the TreeView
+*					tnColor  - the color to use (optional: if it isn't passed,
+*						the system color for an active caption is used; also,
+*						not needed if tlEnable is .T.)
+* Returns:			.T.
+* Environment in:	System.APP/EXE is available to be run
+* Environment out:	the container has an image added to it if tlEnable is .F.
+*						and the image is not visible if tlEnable is .T.
+*					System.APP/EXE has been run, adding a System object to
+*						_screen
+*==============================================================================
+
+lparameters tlEnable, ;
+	tnColor
+local llImage, ;
+	lnWidth, ;
+	lnHeight, ;
+	lnColor, ;
+	lnFactor, ;
+	lnRed, ;
+	lnGreen, ;
+	lnBlue, ;
+	loClrMatrix, ;
+	loBmp, ;
+	loGfx, ;
+	lcFile
+
+* See if we have a LightBox image.
+
+with This
+	llImage = pemstatus(This, 'imgLightBox', 5)
+	do case
+
+* It does and we're supposed to enable the TreeView, so hide the image and
+* redisplay the TreeView.
+
+		case tlEnable and llImage
+			.imgLightBox.Visible    = .F.
+			.imgLightBox.PictureVal = ''
+			.oTree.Visible          = .T.
+
+* We're supposed to disable the TreeView, so ensure GDIPlusX libraries are open and
+* create the image if necessary.
+
+		case not tlEnable
+			if type('_screen.System.Drawing') <> 'O'
+				do System
+			endif type('_screen.System.Drawing') <> 'O'
+			if not llImage
+				.AddObject('imgLightBox', 'Image')
+			endif not llImage
+
+* Size the image as necessary.
+
+			lnWidth  = .oTree.Width
+			lnHeight = .oTree.Height
+			with .imgLightBox
+				.Top     = This.oTree.Top
+				.Left    = This.oTree.Left
+				.Width   = lnWidth
+				.Height  = lnHeight
+				.Anchor  = This.oTree.Anchor
+				.Stretch = 1
+			endwith
+
+* If we weren't passed a color to use, use grey.
+
+			if vartype(tnColor) = 'N'
+				lnColor = tnColor
+			else
+				lnColor = rgb(240, 240, 240)
+			endif vartype(tnColor) = 'N'
+
+* Get the colors we'll need.
+
+			lnFactor = 0.90  && 0 = Dark   1 = Bright
+			lnRed    = bitand(lnColor, 0x000000FF) / 255 * lnFactor
+			lnGreen  = bitrshift(bitand(lnColor, 0x0000FF00), 8) / 255 * lnFactor
+			lnBlue   = bitrshift(bitand(lnColor, 0x00FF0000), 16) / 255 * lnFactor
+
+* Create a BMP of the desired color and use it as the picture for the image.
+
+			with _Screen.System.Drawing
+				loClrMatrix = .Imaging.ColorMatrix.New( ;
+					lnRed,       0,      0, 0, 0, ;
+					    0, lnGreen,      0, 0, 0, ;
+					    0,       0, lnBlue, 0, 0, ;
+					    0,       0,      0, 1, 0, ;
+					    0,       0,      0, 0, 1)
+				loBmp = .Bitmap.FromScreen(This.imgLightBox)
+				loBmp.ApplyColorMatrix(loClrMatrix)
+				loGfx = .Graphics.FromImage(loBmp)
+				loGfx.FillRectangle(.SolidBrush.New(.Color.FromARGB(10, 0, 0, 0)), ;
+					0, 0, lnWidth, lnHeight)
+			endwith
+			with .imgLightBox
+				.PictureVal = loBmp.GetPictureValFromHBitmap()
+				.ZOrder(0)
+				.Visible = .T.
+			endwith
+			.oTree.Visible = .F.
+		endcase
+endwith
+
+ENDPROC
+PROCEDURE setupimagelist
+with This
+	if isnull(.oTree.ImageList)
+
+* Call the LoadImages method to programmatically load images into the
+* ImageList. Images can also be loaded visually if desired.
+
+		.oImageList.ImageHeight = 16
+		.oImageList.ImageWidth  = 16
+		.LoadImages()	
+
+* Associate the ImageList with the TreeView.
+
+		.oTree.ImageList = .oImageList.Object
+	endif isnull(.oTree.ImageList)
+endwith
+
+ENDPROC
+PROCEDURE treeafterlabeledit
+* Abstract method. tnCancel and tcNewName are passed by reference, so set
+* Cancel to .T. to prevent the label from being saved or change tcNewName as
+* desired.
+
+lparameters tnCancel, ;
+	tcNewName
+
+ENDPROC
+PROCEDURE treebeforelabeledit
+* Abstract method. tnCancel is passed by reference, so set it to .T. to prevent
+* the label from being edited.
+
+lparameters tnCancel
+tnCancel = not This.lAllowRename
+
+ENDPROC
+PROCEDURE treedblclick
+* Restore the saved expanded setting for the node so double-clicking doesn't
+* expand the node if that's what we're supposed to do.
+
+with This
+	if not .lExpandOnDblClick
+		.oTree.SelectedItem.Expanded = .lExpanded
+	endif not .lExpandOnDblClick
+endwith
+
+ENDPROC
+PROCEDURE treeexpand
+* If the node has a "Loading" child, this is the first time the node has been
+* expanded, so nuke the child and add the appropriate child nodes, depending on
+* the type of node this is. The TreeView is locked while this happens so we
+* don't see the updates until they're done.
+
+lparameters toNode, ;
+	tlNoSelect
+local laStack[1], ;
+	lnStack, ;
+	loNode, ;
+	loNodeItem, ;
+	llReturn
+
+* If we were called from ourselves because setting loNode.Expanded to .T. fires
+* Expand which calls us, do nothing.
+
+lnStack = astackinfo(laStack)
+if lnStack > 2 and 'treeexpand' $ lower(laStack[lnStack - 2, 3])
+	return
+endif lnStack > 2 ...
+with This
+
+* If we were passed a key rather than a node, try to find the proper node.
+
+	do case
+		case vartype(toNode) = 'O'
+			loNode = toNode
+		case type('.oTree.Nodes[toNode]') = 'O'
+			loNode = .oTree.Nodes[toNode]
+		case type('.oTree.Nodes[upper(toNode)]') = 'O'
+			loNode = .oTree.Nodes[upper(toNode)]
+	endcase
+
+* If this node has a "Loading" child, remove it and add the real children.
+
+	if vartype(loNode) = 'O'
+		if loNode.Children > 0 and loNode.Child.Text = ccLOADING
+			.LoadExpandedNode(loNode)
+		endif loNode.Children > 0 ...
+
+* Ensure the node is expanded (we may have been called programmatically).
+
+		if not loNode.Expanded
+			loNode.Expanded = .T.
+		endif not loNode.Expanded
+
+* Act like the node was just clicked so it's selected.
+
+		if not tlNoSelect and not .lLoading
+			.SelectNode(loNode)
+		endif not tlNoSelect ...
+		llReturn = .T.
+	endif vartype(loNode) = 'O'
+endwith
+return llReturn
+
+ENDPROC
+PROCEDURE treekeydown
+lparameters tnKeyCode, ;
+	tnShift
+local lnKeyCode
+lnKeyCode = 0
+with This
+	do case
+
+* Delete was pressed, so remove the selected node if we're allowed to.
+
+		case tnKeyCode = 46 and .lAllowDelete
+			.DeleteNode()
+
+* Insert was pressed, so add a new node if we're allowed to.
+
+		case tnKeyCode = 45 and .lAllowInsert
+			.InsertNode()
+
+* F1 was pressed, so bring up help.
+
+		case tnKeyCode = 112
+			help
+
+* Translate keypress codes from the TreeView to VFP, then call the form's
+* KeyPress method.
+
+		case tnKeyCode = 33		&& Page Up
+			lnKeyCode = 18
+			tnKeyCode = 0
+		case tnKeyCode = 34		&& Page Down
+			lnKeyCode = 3
+			tnKeyCode = 0
+		case tnKeyCode = 121	&& Shift-F10
+			lnKeyCode = 93
+			tnKeyCode = 0
+	endcase
+	if lnKeyCode <> 0
+		Thisform.KeyPress(lnKeyCode, tnShift)
+	endif lnKeyCode <> 0
+endwith
+
+ENDPROC
+PROCEDURE treemousedown
+lparameters tnButton, ;
+	tnShift, ;
+	tnXCoord, ;
+	tnYCoord
+local loNode
+with This
+
+* Ensure the node under the mouse is selected.
+
+	loNode = .GetNodeUnderMouse(tnXCoord, tnYCoord)
+	if not isnull(loNode)
+		.TreeNodeClick(loNode)
+	endif not isnull(loNode)
+
+* If this is the left mouse button, determine whether we can drag from the
+* selected node or not.
+
+	if tnButton = BUTTON_LEFT
+		.oTree.OLEDragMode = iif(.CanStartDrag(), DRAG_AUTOMATIC, DRAG_MANUAL)
+
+* If this is the right mouse button, show the shortcut menu. We would normally
+* do this is the RightClick method, except the TreeView doesn't have one, or
+* the MouseUp method, except that doesn't fire when the mouse is over the image
+* or text of a node. So, we have to do it here. Alternatively, we could store
+* which button is held down in MouseDown and check for the right button in
+* NodeClick (which doesn't receive a tnButton parameter, hence the need to
+* store it in MouseDown) and call ShowMenu from there.
+
+	else
+		.ShowMenu()
+	endif tnButton = BUTTON_LEFT
+endwith
+
+ENDPROC
+PROCEDURE treemouseup
+* Abstract method.
+
+lparameters tnButton, ;
+	tnShift, ;
+	tnXCoord, ;
+	tnYCoord
+
+ENDPROC
+PROCEDURE treenodecheck
+* Abstract method
+
+lparameters toNode
+
+ENDPROC
+PROCEDURE treenodeclick
+lparameters toNode
+local loParent, ;
+	loNode, ;
+	lnSeconds
+with This
+
+* If you click lightly on the + for a parent node, sometimes Expand doesn't
+* fire but the node still expands, so you see "Loading..." as the node.
+* Since that isn't a valid node, if the user clicks it, we'll expand the
+* parent node.
+
+	if toNode.Text = ccLOADING
+		loParent = toNode.Parent
+		.TreeExpand(loParent, .T.)
+		loNode = loParent.Child
+	else
+		loNode = toNode
+	endif toNode.Text = ccLOADING
+
+* If we're on the same node as before (likely because we were called from
+* TreeMouseDown on the down-press and again from NodeClick when the mouse is
+* released), do nothing. Otherwise, select the node.
+
+	if isnull(.oTree.SelectedItem) or not loNode.Key == .cCurrentNodeKey
+		.SelectNode(loNode)
+
+* Save its Expanded property if this isn't the second click of a double-click.
+* Note that we use a TRY because it's possible the node may have changed in
+* SelectNode.
+
+		lnSeconds = seconds()
+		if lnSeconds - .nNodeClick > _dblclick
+			try
+				.lExpanded = loNode.Expanded
+			catch
+			endtry
+		endif lnSeconds - .nNodeClick > _dblclick
+		.nNodeClick = seconds()
+
+* If we're on the same node, call NodeClicked in case something should happen
+* even if the same node is clicked.
+
+	else
+		.NodeClicked(.T.)
+	endif isnull(.oTree.SelectedItem) ...
+endwith
+
+ENDPROC
+PROCEDURE treeolecompletedrag
+* Turn off node highlighting. This is done in both TreeOLEDragDrop and here
+* because sometimes one or the other event fires.
+
+lparameters tnEffect
+This.oTree.DropHighlight = .NULL.
+
+ENDPROC
+PROCEDURE treeoledragdrop
+lparameters toData, ;
+	tnEffect, ;
+	tnButton, ;
+	tnShift, ;
+	tnXCoord, ;
+	tnYCoord
+local loNode, ;
+	loObject
+with This
+	loNode = .GetNodeUnderMouse(tnXCoord, tnYCoord)
+	.oTree.DropHighlight = .NULL.	&& do this here plus in TreeOLECompleteDrag
+									&& because sometimes one or the other event
+									&& fires
+	loObject = .GetDragDropDataObject(loNode, toData, tnButton, tnShift)
+	if .CanDrop(toData, loNode, loObject, @tnEffect, tnButton, tnShift)
+
+* Flag that a drag is in progress so calls to LoadTree do nothing; the code
+* below starts a timer that calls LoadTree after the drag operation is
+* complete.
+
+		.lDragInProgress = .T.
+
+* Save the key of the selected node so we can restore it if necessary.
+
+		if vartype(.oTree.SelectedItem) = 'O'
+			.cLastNode = .oTree.SelectedItem.Key
+		else
+			.cLastNode = ''
+		endif vartype(.oTree.SelectedItem) = 'O'
+
+* Handle the drop and reset lDragInProgress.
+
+		.HandleDragDrop(toData, loNode, loObject)
+		.lDragInProgress = .F.
+
+* There's a bug in the TreeView control: adding a new node or changing the
+* parent of an existing node in a drag operation causes the node to be deleted
+* once the drag is complete. In that case, LoadTree did nothing and we'll
+* start a timer that'll call it again after the drag is done. Note that we have
+* to disable the sync timer since it interferes with the reloading.
+
+		if .lNeedReload
+			.lNeedReload       = .F.
+			.nTimerInterval    = .tmrSync.Interval
+			.tmrSync.Interval  = 0
+			.tmrSync.Enabled   = .F.
+			.tmrReload.Enabled = .T.
+		endif .lNeedReload
+	endif .CanDrop(toData ...
+endwith
+
+ENDPROC
+PROCEDURE treeoledragover
+lparameters toData, ;
+	tnEffect, ;
+	tnButton, ;
+	tnShift, ;
+	tnXCoord, ;
+	tnYCoord, ;
+	tnState
+local loNode, ;
+	loPrevious, ;
+	loObject
+with This
+
+* Determine which node the source was dragged over and highlight it.
+
+	loNode = .GetNodeUnderMouse(tnXCoord, tnYCoord)
+	if vartype(loNode) = 'O'
+		.oTree.DropHighlight = loNode
+
+* If we're near the top or bottom of the TreeView, auto-scroll (the INKEY()
+* ensures it doesn't scroll too fast).
+
+		do case
+			case tnYCoord > .oTree.Top + 15
+			case type('loNode.Previous.Text') = 'C'
+				loPrevious = loNode.Previous
+				do while vartype(loPrevious.Parent) = 'O' and ;
+					not loPrevious.Parent.Expanded
+					loPrevious = loPrevious.Parent
+				enddo while vartype(loPrevious.Parent) = 'O' ...
+				do while loPrevious.Expanded and loPrevious.Children > 0
+					loPrevious = loPrevious.Child.LastSibling
+				enddo while loPrevious.Expanded ...
+				inkey(0.05, 'H')
+				loPrevious.EnsureVisible()
+			case type('loNode.Parent.Text') = 'C'
+				inkey(0.05, 'H')
+				loNode.Parent.EnsureVisible()
+		endcase
+		do case
+			case tnYCoord < .oTree.Top + .oTree.Height - 15
+			case loNode.Expanded and type('loNode.Child.Text') = 'C'
+				inkey(0.05, 'H')
+				loNode.Child.EnsureVisible()
+			case type('loNode.Next.Text') = 'C'
+				inkey(0.05, 'H')
+				loNode.Next.EnsureVisible()
+		endcase
+	endif vartype(loNode) = 'O'
+
+* If the mouse is entering or moving over the TreeView, flag whether we'll
+* allow a drop or not.
+
+	if tnState = DRAG_ENTER or tnState = DRAG_OVER
+		loObject = .GetDragDropDataObject(loNode, toData, tnButton, tnShift)
+		.CanDrop(toData, loNode, loObject, @tnEffect, tnButton, tnShift)
+	endif tnState = DRAG_ENTER ...
+endwith
+
+ENDPROC
+PROCEDURE treeolestartdrag
+* Set the data for the drag object to the node type and ID. We'll use a custom
+* format that holds the node type and key so dragging and dropping to ourselves
+* can be detected. In addition, the "text" format contains the current node's
+* Text value.
+
+lparameters toData, ;
+	tnAllowedEffects
+local lcValue
+with This
+	lcValue = createbinary(.cCurrentNodeType + ':' + ;
+		transform(.cCurrentNodeID))
+	toData.SetData(lcValue, CF_MAX)
+	toData.SetData(.cCurrentNodeText, CF_TEXT)
+endwith
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+6[END RESERVED2]
+[START RESERVED3]
+*beforeselectnode Fires before a new node is selected
+*calctwipsperpixel Calculate the conversion factor between VFP window units (in pixels) and TreeView window units (in twips)
+*candrop Returns .T. if the specified source can be dropped on the specified node
+*canstartdrag Returns .T. if the current node in the TreeView can be dragged
+*createnodeobject Returns an object with properties about a node in the TreeView
+*deletenode Deletes the selected node
+*getchildnodes Fills the passed collection with objects containing properties about the child nodes of the specified node
+*getdragdropdataobject Returns an object with properties about a dragged object and the node it's dropped on
+*getnodeitemfromnode Returns a node item object from the specified TreeView node
+*getnodekey Gets the key for the specified node type and ID (not called from anywhere but can be implemented and called)
+*getnodeundermouse Returns a reference to the node under the mouse
+*getregistrykey Gets the Registry key to use
+*getrootnodes Fills the passed collection with objects containing properties about the root nodes
+*getsinglenode Creates and populates a single node object
+*gettypeandidfromnode Returns an object containing Type and ID properties for the specified node
+*goback Goes back to the previously selected node
+*handledragdrop Handles the completion of a DragDrop operation
+*insertnode Inserts a new node
+*loadexpandednode Loads the children for the specified node
+*loadimages Loads the ImageList control with desired images
+*loadnode Loads the specified node into the TreeView
+*loadnodechildren Loads the children of the specified node
+*loadtree Loads the TreeView
+*locktreeview Locks the TreeView so updates don't appear immediately
+*nodeclicked Called when a node is clicked
+*oselectednode_access 
+*pushkey Pushes the specified key onto the stack
+*removenode Removes the selected node
+*restoreselectednode Restores the selected node from whereever it was saved when this was last used
+*saveselectednode Saves the selected node so it can be restored at restart
+*selectnode Selects the specified node
+*settreeviewbackcolor Sets the background color of the TreeView
+*setupimagelist Sets up the ImageList control
+*treeafterlabeledit Called after the text of a node has been edited in the TreeView
+*treebeforelabeledit Called before the text of a node is edited in the TreeView
+*treedblclick Fired when the user double-clicks on the TreeView
+*treeexpand Called when a node is expanded in the TreeView
+*treekeydown Called when a key is pressed when the TreeView has focus
+*treemousedown Called when a mouse button is pressed over the TreeView
+*treemouseup Called when a mouse button is released over the TreeView
+*treenodecheck Called when a node is checked in the TreeView
+*treenodeclick Called when a node is selected in the TreeView
+*treeolecompletedrag Called when an OLECompleteDrag events occurs in the TreeView 
+*treeoledragdrop Called when an OLEDragDrop event occurs in the TreeView
+*treeoledragover Called when an OLEDragOver event occurs in the TreeView
+*treeolestartdrag Called when an OLEStartDrag event occurs in the TreeView
+^aexpandednodes[1,0] An array containing the FullPath of expanded nodes
+ccurrentnodeid The ID of the currently selected node
+ccurrentnodekey The key of the currently selected node
+ccurrentnodetext The text of the currently selected node
+ccurrentnodetype The type of the currently selected node
+clastnode The key for the node selected the last time this container was used
+cregistrykey The key used to persist expanded and selected nodes
+cregistrykeysuffix The subnode to use under the parent form's Registry key to store values for this control
+lallowdelete .T. if the user can delete a node by pressing Delete
+lallowinsert .T. if the user can insert a node by pressing Insert
+lallowrename .T. if the user can rename a node
+lautoloadchildren .T. if child nodes are loaded when the TreeView is loaded
+ldraginprogress .T. if a drag operation is in progress
+lexpanded .T. if the selected node should be expanded or not (double-clicking on a node causes it to be expanded when it shouldn't)
+lexpandondblclick .T. to expand a parent node on a double-click
+linitialized .T. once all the tasks in Init are done
+lloading .T. if we're loading the TreeView
+lloadtreeviewatstartup .T. to load the TreeView control when the container is instantiated
+lneedreload .T. if LoadTree was called during a drag operation, meaning we need to call it again after the drag is complete
+lrestoreoninit .T. to restore selected and expanded nodes at startup
+lsortrootnodes .T. to sort the root nodes
+ltracknodeclicks .T. to push node clicks onto a stack so we can provide "go back" functionality
+lusepathaskey .T. to use the path of a node as its key
+lwindowlocked .T. if the TreeView is locked
+nautoexpand The level to which nodes are expanded when the TreeView is loaded
+nnodeclick The time the selected node was clicked (used for double-clicking)
+ntimerinterval The timer interval for tmrSync (temporary holding property)
+ntreefactorx The horizontal conversion factor for twips to pixels
+ntreefactory The vertical conversion factor for twips to pixels
+oselectednode A reference to the selected node in the TreeView
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+[START RESERVED8]
+sftreeview.h[END RESERVED8]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _1550LHB2S
+[CLASS] olecontrol
+[BASECLASS] olecontrol
+[OBJNAME] oImageList
+[PARENT] sftreeviewcontainer
+[START PROPERTIES]
+Left = 160
+Name = "oImageList"
+Top = 0
+ZOrderSet = 1
+[END PROPERTIES]
+[BINSTART OLE]
+CHECKSUM=54356
+[BINEND OLE]
+[BINSTART OLE2]
+CHECKSUM=5108
+[BINEND OLE2]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2EW0R4G3L
+[CLASS] sfstack
+[CLASSLOC] sfstack.vcx
+[BASECLASS] collection
+[OBJNAME] oStack
+[PARENT] sftreeviewcontainer
+[START PROPERTIES]
+Left = 160
+Name = "oStack"
+Top = 80
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _14L0NP99P
+[CLASS] olecontrol
+[BASECLASS] olecontrol
+[OBJNAME] oTree
+[PARENT] sftreeviewcontainer
+[START PROPERTIES]
+Anchor = 15
+Height = 200
+Name = "oTree"
+Width = 210
+ZOrderSet = 0
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE AfterLabelEdit
+* Pass AfterLabelEdit events to the parent.
+
+lparameter tnCancel, ;
+	tcNewName
+This.Parent.TreeAfterLabelEdit(@tnCancel, @tcNewName)
+
+ENDPROC
+PROCEDURE BeforeLabelEdit
+* Pass BeforeLabelEdit events to the parent.
+
+lparameters tnCancel
+This.Parent.TreeBeforeLabelEdit(@tnCancel)
+
+ENDPROC
+PROCEDURE Collapse
+* Ensure the node in the tree that was just collapsed is selected.
+
+lparameters toNode
+This.Parent.SelectNode(toNode)
+
+ENDPROC
+PROCEDURE DblClick
+* Pass double-clicks to the parent.
+
+This.Parent.TreeDblClick()
+
+ENDPROC
+PROCEDURE Expand
+* Pass node expansion to the parent.
+
+lparameters toNode
+This.Parent.TreeExpand(toNode)
+
+ENDPROC
+PROCEDURE Init
+* Change the font to Segoe UI in Vista.
+
+if os(3) >= '6'
+	This.Font.Name = 'Segoe UI'
+endif os(3) >= '6'
+
+ENDPROC
+PROCEDURE KeyDown
+* Pass keypresses to the parent.
+
+lparameters tnKeyCode, ;
+	tnShift
+This.Parent.TreeKeyDown(tnKeyCode, tnShift)
+
+ENDPROC
+PROCEDURE MouseDown
+* Pass MouseDown events to the parent.
+
+lparameters tnButton, ;
+	tnShift, ;
+	tnXCoord, ;
+	tnYCoord
+This.Parent.TreeMouseDown(tnButton, tnShift, tnXCoord, tnYCoord)
+
+ENDPROC
+PROCEDURE MouseUp
+* Pass MouseUp events to the parent. This doesn't fire when the mouse is over
+* the image or text of a node (NodeClick fires in that case), only when it's
+* over a "white" part of the TreeView.
+
+lparameters tnButton, ;
+	tnShift, ;
+	tnXCoord, ;
+	tnYCoord
+This.Parent.TreeMouseUp(tnButton, tnShift, tnXCoord, tnYCoord)
+
+ENDPROC
+PROCEDURE NodeCheck
+* Pass NodeCheck events to the parent.
+
+lparameters toNode
+This.Parent.TreeNodeCheck(toNode)
+
+ENDPROC
+PROCEDURE NodeClick
+* Pass NodeClick events to the parent.
+
+lparameters toNode
+This.Parent.TreeNodeClick(toNode)
+
+ENDPROC
+PROCEDURE OLECompleteDrag
+* Pass OLECompleteDrag events to the parent.
+
+lparameters tnEffect
+This.Parent.TreeOLECompleteDrag(@tnEffect)
+
+ENDPROC
+PROCEDURE OLEDragDrop
+* Pass OLEDragDrop events to the parent.
+
+lparameters toData, ;
+	tnEffect, ;
+	tnButton, ;
+	tnShift, ;
+	tnXCoord, ;
+	tnYCoord
+This.Parent.TreeOLEDragDrop(@toData, @tnEffect, tnButton, tnShift, tnXCoord, ;
+	tnYCoord)
+
+ENDPROC
+PROCEDURE OLEDragOver
+* Pass OLEDragOver events to the parent.
+
+lparameters toData, ;
+	tnEffect, ;
+	tnButton, ;
+	tnShift, ;
+	tnXCoord, ;
+	tnYCoord, ;
+	tnState
+This.Parent.TreeOLEDragOver(@toData, @tnEffect, tnButton, tnShift, tnXCoord, ;
+	tnYCoord, tnState)
+
+ENDPROC
+PROCEDURE OLEStartDrag
+* Pass OLEStartDrag events to the parent.
+
+lparameters toData, ;
+	tnAllowedEffects
+This.Parent.TreeOLEStartDrag(@toData, @tnAllowedEffects)
+
+ENDPROC
+[END METHODS]
+[BINSTART OLE]
+CHECKSUM=21596
+[BINEND OLE]
+[BINSTART OLE2]
+CHECKSUM=5108
+[BINEND OLE2]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2HM0FFCEE
+[CLASS] sftimer
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] timer
+[OBJNAME] tmrReload
+[PARENT] sftreeviewcontainer
+[START PROPERTIES]
+Enabled = .F.
+Interval = 200
+Left = 161
+Name = "tmrReload"
+Top = 111
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Timer
+local loNode
+with This.Parent
+	This.Enabled = .F.
+	.LoadTree()
+	.tmrSync.Enabled  = .T.
+	.tmrSync.Interval = .nTimerInterval
+endwith
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _1550LHB2S
+[CLASS] sftimer
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] timer
+[OBJNAME] tmrSync
+[PARENT] sftreeviewcontainer
+[START PROPERTIES]
+Interval = 1500
+Left = 160
+Name = "tmrSync"
+Top = 49
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Timer
+* It appears that sometimes clicking on a node in the TreeView doesn't fire
+* NodeClick. So, we'll periodically check whether the node we think is selected
+* matches the actual selection, and if not, fire NodeClick. Note that we
+* specifically ensure Interval isn't 0 since sometimes this event fires one
+* more time even after we disabled it.
+
+with This.Parent
+	if wvisible('Trace')
+		This.Enabled = .F.
+	endif wvisible('Trace')
+	if This.Interval > 0 and not isnull(.oTree.SelectedItem) and ;
+		not .oTree.SelectedItem.Key == .cCurrentNodeKey
+		.TreeNodeClick(.oTree.SelectedItem)
+	endif This.Interval > 0 ...
+endwith
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sftreeviewcontainer
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2EG0EEFHL
+[CLASS] sftreeviewcontainer
+[CLASSLOC] sftreeview.vcx
+[BASECLASS] container
+[OBJNAME] sftreeviewcursor
+[START PROPERTIES]
+
+</VFPData>
+<memberdata name="addnodetocollection" type="method" display="AddNodeToCollection"/>
+<memberdata name="ccursoralias" type="property" display="cCursorAlias"/>
+<memberdata name="ccursorstructure" type="property" display="cCursorStructure"/>
+<memberdata name="createtreeviewcursor" type="method" display="CreateTreeViewCursor"/>
+<memberdata name="displayrecord" type="method" display="DisplayRecord"/>
+<memberdata name="filltreeviewcursor" type="method" display="FillTreeViewCursor"/>
+<memberdata name="filltreeviewcursors" type="method" display="FillTreeViewCursors"/>
+<memberdata name="getnodekey" type="method" display="GetNodeKey"/>
+<memberdata name="lsortrootnodes" type="property" display="lSortRootNodes"/>
+Name = "sftreeviewcursor"
+_memberdata =      732<VFPData>
+ccursoralias = 
+ccursorstructure = ID C(60), TYPE C(60), PARENTID C(60), PARENTTYPE C(60), TEXT C(60), IMAGE C(20), SELIMAGE C(20), EXPIMAGE C(20), SORTED L, NODEKEY C(60)
+lsortrootnodes = .T.
+lusepathaskey = .F.
+oImageList.Left = 160
+oImageList.Name = "oImageList"
+oImageList.Top = 0
+oStack.Name = "oStack"
+oTree.Height = 200
+oTree.Name = "oTree"
+oTree.Width = 210
+tmrReload.Name = "tmrReload"
+tmrSync.Name = "tmrSync"
+[END PROPERTIES]
+[START PROTECTED]
+addnodetocollection
+[END PROTECTED]
+[START METHODS]
+PROCEDURE Init
+* Create an alias for the TreeView cursor if we don't already have one.
+
+if empty(This.cCursorAlias)
+	This.cCursorAlias = sys(2015)
+endif empty(This.cCursorAlias)
+dodefault()
+
+ENDPROC
+PROCEDURE about
+* Subclassing this control:
+*
+* - Fill in the LoadImages, FillTreeViewCursor, and DisplayRecord methods. See
+*   the comments in those methods for sample code.
+*
+* - Set lSortRootNodes as desired.
+*
+* - Set lAllowRename to .T. to always allow renaming the selected node (the
+*   default is .F.). You could also put code into DisplayRecord that sets
+*   lAllowRename to .T. if the selected node can be renamed. You'll need to add
+*   code to TreeAfterLabelEdit to rename the record in the source data.
+*
+* - Set lAllowDelete to .T. to always allow deleting the selected node (the
+*   default is .F.). You could also put code into DisplayRecord that sets
+*   lAllowDelete to .T. if the selected node can be deleted. (In that case,
+*   you could have a menu item or command button to delete the selected node
+*   with it conditionally being enabled based on lAllowDelete.) You'll need to
+*   add code to DeleteNode to remove the record from the source data and have
+*   it call RemoveNode to remove the node from the TreeView. You can also call
+*   This.oTree.Nodes.Remove(KeyValue) to remove other nodes (not child nodes,
+*   since those are automatically removed) if necessary.
+*
+* - Set lAllowInsert as .T. to allow the user to add nodes (the default is
+*   .F.). In that case, fill in InsertNode with the necessary code.
+*
+* - To persist expanded and selected nodes, set either cRegistryKey or, if the
+*   form has a cRegistryKey property and you want to use a subnode of that, set
+*   cRegistryKeySuffix.
+
+ENDPROC
+PROCEDURE addnodetocollection
+lparameters toCollection
+local lnRecno, ;
+	lcID, ;
+	lcType, ;
+	llHasChildren, ;
+	lcKey, ;
+	loNodeItem
+with This
+
+* See if the current record has any children.
+
+	lnRecno = recno()
+	lcID    = ID
+	lcType  = TYPE
+	locate for PARENTID = lcID and PARENTTYPE = lcType
+	llHasChildren = found()
+	go lnRecno
+
+* If we don't have a key, create one and put it into NODEKEY.
+
+	if empty(NODEKEY)
+		lcKey = .GetNodeKey(TYPE, ID)
+		replace NODEKEY with lcKey
+	else
+		lcKey = trim(NODEKEY)
+	endif empty(NODEKEY)
+
+* Create a node item object and fill its properties from fields in the cursor
+* for the current record, then add it to the collection
+
+	loNodeItem = .CreateNodeObject()
+	with loNodeItem
+		.Key           = lcKey
+		.Text          = alltrim(TEXT)
+		.Image         = alltrim(IMAGE)
+		.SelectedImage = iif(empty(SELIMAGE), .Image, alltrim(SELIMAGE))
+		.ExpandedImage = iif(empty(EXPIMAGE), .Image, alltrim(EXPIMAGE))
+		.Sorted        = SORTED
+		.HasChildren   = llHasChildren
+	endwith
+	toCollection.Add(loNodeItem)
+endwith
+
+ENDPROC
+PROCEDURE createtreeviewcursor
+* Creates the cursor from cCursorStructure.
+
+local lcStructure
+lcStructure = This.cCursorStructure
+
+* Ensure we have parens around the structure string.
+
+if left(lcStructure, 1) <> '('
+	lcStructure = '(' + lcStructure + ')'
+endif left(lcStructure, 1) <> '('
+
+* Create and index the cursor.
+
+create cursor (This.cCursorAlias) &lcStructure
+index on ID         tag ID
+index on PARENTID   tag PARENTID
+index on PARENTTYPE tag PARENTTYPE
+index on NODEKEY    tag NODEKEY
+index on TYPE       tag TYPE
+if This.lSortRootNodes
+	index on upper(TEXT) tag TEXT
+endif This.lSortRootNodes
+
+ENDPROC
+PROCEDURE displayrecord
+* Abstract method. The TreeView cursor (alias in This.cCursorAlias) is
+* positioned to the record for the node and This.cCurrentNodeID and
+* cCurrentNodeType contain the ID and type of the node, so typically you'll
+* find the record in the desired table and refresh the form to display
+* information about that record.
+
+ENDPROC
+PROCEDURE filltreeviewcursor
+* Abstract method. Typically, you'll add parent and child records to the
+* TreeView cursor using code like this:
+*
+* select ParentTable
+* scan
+*	insert into (This.cCursorAlias)
+*			(ID, ;
+*			TYPE, ;
+*			TEXT, ;
+*			IMAGE, ;
+*			SORTED) ;
+*		values ;
+*			(ParentTable.ID, ;
+*			'ParentType', ;
+*			ParentTable.SomeDescriptiveField, ;
+*			'ImageForParent', ;
+*			.T. for sorted children, .F. to display in order in cursor)
+* endscan
+* select ChildTable
+* scan
+*	insert into (This.cCursorAlias) ;
+*			(ID, ;
+*			PARENTID, ;
+*			TYPE, ;
+*			TEXT, ;
+*			IMAGE, ;
+*			SORTED) ;
+*		values ;
+*			(ChildTable.ID, ;
+*			ChildTable.ParentID, ;
+*			'ChildType', ;
+*			ChildTable.SomeDescriptiveField, ;
+*			'ImageForChild')
+*			.T. for sorted children (if there are children), .F. to display in order in cursor)
+* endscan
+*
+* Note:
+* - By default, ID and PARENTID are character fields (although you can change
+*   that in the cCursorStructure property), so use TRANSFORM() if the ID values
+*   are another data type.
+* - TYPE defines the type of record, so it can be things like "Parent" and
+*   "Child" or more descriptive like "Customer" and "Order"
+* - If you want different images when a node is selected or expanded, store the
+*   image key in SELIMAGE or EXPIMAGE.
+
+ENDPROC
+PROCEDURE getchildnodes
+* Get the child nodes for the specified parent.
+
+lparameters tcType, ;
+	tcID, ;
+	toCollection
+local lnSelect
+with This
+	lnSelect = select()
+	select (.cCursorAlias)
+	set order to
+	scan for alltrim(PARENTID) == alltrim(tcID) and alltrim(PARENTTYPE) == alltrim(tcType)
+		.AddNodeToCollection(toCollection)
+	endscan for alltrim(PARENTID) == alltrim(tcID) ...
+	select (lnSelect)
+endwith
+
+ENDPROC
+PROCEDURE getnodekey
+lparameters tcType, ;
+	tuID
+local lcKey
+lcKey = trim(tcType) + '~' + trim(transform(tuID))
+return lckey
+
+ENDPROC
+PROCEDURE getrootnodes
+* Fill the root node collection with all parent records (ie. where PARENTID is empty).
+
+lparameters toCollection
+local lnSelect, ;
+	llHasChildren, ;
+	loNodeItem
+with This
+	lnSelect = select()
+	select (.cCursorAlias)
+	if .lSortRootNodes
+		set order to TEXT
+	else
+		set order to
+	endif .lSortRootNodes
+	scan for empty(PARENTID)
+		.AddNodeToCollection(toCollection)
+	endscan for empty(PARENTID)
+	select (lnSelect)
+endwith
+
+ENDPROC
+PROCEDURE gettypeandidfromnode
+lparameters toNode
+local loObject, ;
+	lcAlias, ;
+	lnRecno
+loObject = dodefault()
+lcAlias  = This.cCursorAlias
+lnRecno  = recno(lcAlias)
+if seek(toNode.Key, lcAlias, 'NODEKEY')
+	loObject.ID   = trim(evaluate(lcAlias + '.ID'))
+	loObject.Type = trim(evaluate(lcAlias + '.TYPE'))
+endif seek(toNode.Key, lcAlias, 'NODEKEY')
+if between(lnRecno, 1, reccount(lcAlias))
+	go lnRecno in (lcAlias)
+endif between(lnRecno, 1, reccount(lcAlias))
+return loObject
+
+ENDPROC
+PROCEDURE loadimages
+* Abstract method to load the images for the ImageList control. Typically, code
+* will look like this:
+*
+* with This.oImageList
+*	.ListImages.Add(1, 'Image1Key', loadpicture('SomeImageFile'))
+*	.ListImages.Add(2, 'Image2Key', loadpicture('SomeImageFile'))
+* endwith
+*
+* Set ImageHeight and ImageWidth of This.oImageList to appropriate values if
+* the images are not 16x16.
+
+ENDPROC
+PROCEDURE loadtree
+lparameters tlNoSelect
+with This
+
+* Close the cursor driving the TreeView if necessary.
+
+	use in select(.cCursorAlias)
+
+* Create and fill the cursor.
+
+	.CreateTreeViewCursor()
+	.FillTreeViewCursor()
+endwith
+
+* Do the usual behavior.
+
+return dodefault(tlNoSelect)
+
+ENDPROC
+PROCEDURE nodeclicked
+* Find the record for the selected node in the TreeView cursor.
+
+lparameters tlSameNode
+local lnSelect
+if not tlSameNode
+	with This
+		lnSelect = select()
+		select (This.cCursorAlias)
+		locate for ID = .cCurrentNodeID and TYPE = .cCurrentNodeType
+		select (lnSelect)
+		.DisplayRecord()
+	endwith
+endif not tlSameNode
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED3]
+*addnodetocollection Adds a node to the collection
+*createtreeviewcursor Creates the cursor driving the TreeView
+*displayrecord Called when a node is clicked to display the current record
+*filltreeviewcursor Fills the cursor driving the TreeView with the records to display
+ccursoralias The alias of the cursor driving the TreeView
+ccursorstructure The structure of the cursor driving the TreeView as it would go into a CREATE CURSOR statement
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sftreeviewcursor
+[EOF]

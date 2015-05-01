@@ -1,0 +1,712 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Class     
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI146F8G
+[CLASS] container
+[BASECLASS] container
+[OBJNAME] foodimage
+[START PROPERTIES]
+BackStyle = 0
+BorderWidth = 0
+Height = 133
+Name = "foodimage"
+Width = 72
+_memberdata = <VFPData><memberdata name="cname" display="cName"/><memberdata name="nprice" display="nPrice"/></VFPData>
+cname = 
+nprice = 0
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+Thisform.AddItem(This)
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+4[END RESERVED2]
+[START RESERVED3]
+_memberdata XML Metadata for customizable properties
+cname
+nprice
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI149KQI
+[CLASS] image
+[BASECLASS] image
+[OBJNAME] Image1
+[PARENT] foodimage
+[START PROPERTIES]
+Height = 64
+Left = 3
+Name = "Image1"
+Stretch = 1
+Top = 0
+Width = 64
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+This.Parent.Click()
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI149KQK
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] Label1
+[PARENT] foodimage
+[START PROPERTIES]
+Alignment = 2
+BackStyle = 0
+Caption = "Price"
+FontSize = 16
+Height = 27
+Left = 0
+Name = "Label1"
+Top = 100
+Width = 72
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+This.Caption = transform(This.Parent.nPrice, '@$ 99.99')
+
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZI149KQJ
+[CLASS] label
+[BASECLASS] label
+[OBJNAME] lblName
+[PARENT] foodimage
+[START PROPERTIES]
+Alignment = 2
+AutoSize = .F.
+BackStyle = 0
+Caption = "Name"
+FontSize = 16
+Height = 27
+Left = 0
+Name = "lblName"
+Top = 72
+Width = 72
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+This.Caption = This.Parent.cName
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] foodimage
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0MMGES
+[CLASS] sflabel
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] label
+[OBJNAME] hyperlinklabel
+[START PROPERTIES]
+FontUnderline = .T.
+ForeColor = 0,0,255
+MousePointer = 15
+Name = "hyperlinklabel"
+[END PROPERTIES]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] hyperlinklabel
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH14M8RY
+[CLASS] sftreeviewcontainer
+[CLASSLOC] sftreeview.vcx
+[BASECLASS] container
+[OBJNAME] projectfilestreeview
+[START PROPERTIES]
+Name = "projectfilestreeview"
+_memberdata = <VFPData><memberdata name="cfiletype" display="cFileType"/><memberdata name="cimagefile" display="cImageFile"/><memberdata name="lhavechildren" display="lHaveChildren"/></VFPData>
+cfiletype = 
+cimagefile = 
+lhavechildren = .F.
+lloadtreeviewatstartup = .F.
+lsortrootnodes = .T.
+lusepathaskey = .F.
+oImageList.Left = 160
+oImageList.Name = "oImageList"
+oImageList.Top = 0
+oStack.Name = "oStack"
+oTree.Height = 200
+oTree.Name = "oTree"
+oTree.Width = 210
+tmrReload.Name = "tmrReload"
+tmrSync.Name = "tmrSync"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE getchildnodes
+lparameters tcType, ;
+	tcID, ;
+	toCollection
+local laClasses[1], ;
+	lnClasses, ;
+	lnI, ;
+	lcClass, ;
+	loNodeItem
+do case
+	case tcType = 'V'
+		lnClasses = avcxclasses(laClasses, tcID)
+		for lnI = 1 to lnClasses
+			lcClass    = laClasses[lnI, 1]
+			loNodeItem = This.CreateNodeObject()
+			with loNodeItem
+				.Text  = juststem(lcClass)
+				.Key   = 'C' + lcClass
+				.Image = lower(laClasses[lnI, 2])
+			endwith
+			toCollection.Add(loNodeItem)
+		next lnI
+endcase
+
+ENDPROC
+PROCEDURE getrootnodes
+lparameters toCollection
+local loFile, ;
+	loNodeItem
+for each loFile in Thisform.oProject.Files
+	if loFile.Type = This.cFileType
+		loNodeItem = This.CreateNodeObject()
+		with loNodeItem
+			.Key         = This.cFileType + loFile.Name
+			.Text        = juststem(loFile.Name)
+			.Image       = 'Image'
+			.HasChildren = This.lHaveChildren
+			.Sorted      = .T.
+		endwith
+		toCollection.Add(loNodeItem)
+	endif loFile.Type = This.cFileType
+next loFile
+
+ENDPROC
+PROCEDURE gettypeandidfromnode
+lparameters toNode
+local loObject
+loObject      = dodefault()
+loObject.Type = left(toNode.Key, 1)
+loObject.ID   = substr(toNode.Key, 2)
+return loObject
+
+ENDPROC
+PROCEDURE loadimages
+local laFiles[1], ;
+	lnFiles, ;
+	lnI, ;
+	lcFile
+This.oImageList.ListImages.Add(1, 'Image', loadpicture(This.cImageFile))
+lnFiles = adir(laFiles, 'bmps\*.ico')
+for lnI = 1 to lnFiles
+	lcFile = lower(laFiles[lnI, 1])
+	This.oImageList.ListImages.Add(lnI + 1, juststem(lcFile), ;
+		loadpicture('bmps\' + lcFile))
+next lnI
+
+ENDPROC
+PROCEDURE nodeclicked
+lparameters tlSameNode
+local loFile, ;
+	loClass
+if vartype(This.oTree.SelectedItem) = 'O'
+	loFile = This.GetTypeAndIDFromNode(This.oTree.SelectedItem)
+	if loFile.Type = 'C'
+		loClass = loFile
+		loFile  = This.GetTypeAndIDFromNode(This.oTree.SelectedItem.Parent)
+	else
+		loClass = .NULL.
+	endif loFile.Type = 'C'
+	Thisform.FileSelected(loFile, loClass)
+endif vartype(This.oTree.SelectedItem) = 'O'
+
+ENDPROC
+PROCEDURE treedblclick
+loObject = This.GetTypeAndIDFromNode(This.oTree.SelectedItem)
+if loObject.Type = 'C'
+	loLibrary = This.GetTypeAndIDFromNode(This.oTree.SelectedItem.Parent)
+	editsource(loLibrary.ID, 0, loObject.ID)
+else
+	editsource(loObject.ID)
+endif loObject.Type = 'C'
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED3]
+cfiletype The type of file displayed in this TreeView
+cimagefile The image file for our files
+lhavechildren .T. if our files have children
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] projectfilestreeview
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0MC4BH
+[CLASS] hyperlinklabel
+[CLASSLOC] samples.vcx
+[BASECLASS] label
+[OBJNAME] projectlink
+[START PROPERTIES]
+Name = "projectlink"
+_memberdata = <VFPData><memberdata name="cprojectpath" display="cProjectPath"/></VFPData>
+cprojectpath = 
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+raiseevent(This.Parent.Parent.Parent, 'OpenProject', This.cProjectPath)
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED3]
+cprojectpath The path to the project
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] projectlink
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZP0MSTM5
+[CLASS] themedzoomnavbartbr
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] toolbar
+[OBJNAME] samplethemedzoomnavbartoolbar
+[START PROPERTIES]
+Name = "samplethemedzoomnavbartoolbar"
+themedzoomnavbar.Left = 5
+themedzoomnavbar.Name = "themedzoomnavbar"
+themedzoomnavbar.Top = 3
+themedzoomnavbar.cntReflected.Name = "cntReflected"
+themedzoomnavbar.cntZoom.Name = "cntZoom"
+themedzoomnavbar.ctl32_balloontip.Name = "ctl32_balloontip"
+themedzoomnavbar.ctl32_balloontip.lblName.Name = "lblName"
+themedzoomnavbar.ctl32_balloontip.tmrHide.Name = "tmrHide"
+themedzoomnavbar.ctl32_balloontip.tmrShow.Name = "tmrShow"
+themedzoomnavbar.imgBackground.Name = "imgBackground"
+themedzoomnavbar.shpMouseHandler.Name = "shpMouseHandler"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE themedzoomnavbar.Init
+local lcDisableMessage
+dodefault()
+lcDisableMessage = 'You can disable/enable a button either by passing a ' + ;
+	'parameter to the AddButton and AddStackButton methods or using the ' + ;
+	'SetButtonState and SetStackButtonState methods.'
+lcImageMessage   = 'This shows why you should use 96x96 images. Otherwise, ' + ;
+	'when the image is resized to 96x96, it looks grainy.'
+with This
+	.AddButton('Printers', 'Manage printers.',         'Printer96.png')
+	.AddButton('Display',  'Change display settings.', 'Monitor96.png')
+	.AddButton('Photo',    lcDisableMessage,           'Photo96.png', , , ,.F.)
+	.AddButton('Search',   'Search for files.',        'Search96.png')
+	.AddButton('Browser',  'Explore the web.',         'Explorer96.png')
+	.AddButton('Explorer', 'Show files and folders.',  'Folder96.png')
+	.AddButton('Software', lcImageMessage,             'Software32.png')
+	.AddButton('Exit', 'Click here to exit.', 'OpenedDoor96.png')
+endwith
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] samplethemedzoomnavbartoolbar
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0LS26X
+[CLASS] sfthemedexplorerbar
+[CLASSLOC] sfthemedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] startpageexplorerbar
+[START PROPERTIES]
+Height = 622
+Name = "startpageexplorerbar"
+Width = 267
+_memberdata = <VFPData><memberdata name="getrecentprojects" display="GetRecentProjects"/><memberdata name="openproject" display="OpenProject"/><memberdata name="newproject" display="NewProject"/><memberdata name="showoptions" display="ShowOptions"/></VFPData>
+ctl32_scrollbar.Name = "ctl32_scrollbar"
+ctl32_scrollbar.ctlTextBox.Name = "ctlTextBox"
+ctl32_scrollbar.lblname.Name = "lblname"
+imgBackground.Name = "imgBackground"
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Init
+dodefault()
+This.GetRecentProjects()
+
+ENDPROC
+PROCEDURE getrecentprojects
+local llLockScreen, ;
+	loContainer, ;
+	lnSelect, ;
+	laProjects[1], ;
+	lnProjects, ;
+	lnI, ;
+	lcPath, ;
+	lcName, ;
+	lcLabel
+
+* Lock the screen.
+
+llLockScreen = Thisform.LockScreen
+Thisform.LockScreen = .T.
+
+* If we haven't already done so, add links to recent projects to the recent
+* projects group.
+
+loContainer = This.oRecentProjects.cntUserControls
+if loContainer.ControlCount = 0
+	lnSelect = select()
+	select ;
+		DATA ;
+		from (set('RESOURCE', 1)) ;
+		where TYPE = 'PREFW' and ID = 'MRUL' ;
+		into cursor _PROJECTS
+	lnProjects = alines(laProjects, DATA, 2, chr(0))
+	for lnI = 2 to min(lnProjects, 8)
+		lcPath  = laProjects[lnI]
+		lcName  = juststem(lcPath)
+		lcLabel = 'Project' + transform(lnI)
+		loContainer.NewObject(lcLabel, 'ProjectLink', 'Samples.vcx')
+		with loContainer.&lcLabel
+			.Top          = (lnI - 2) * 20 + 13
+			.Left         = 15
+			.Caption      = lcName
+			.cProjectPath = lcPath
+			.ToolTipText  = lcName + ' (' + lcPath + ')'
+			.Visible      = .T.
+		endwith
+	next lnI
+	use
+	use in FoxUser
+	select (lnSelect)
+endif loContainer.ControlCount = 0
+
+* If there aren't any recent projects, collapse the group.
+
+if loContainer.ControlCount = 0
+	This.oRecentProjects.Collapse()
+endif loContainer.ControlCount = 0
+
+* Restore the screen.
+
+Thisform.LockScreen = llLockScreen
+
+ENDPROC
+PROCEDURE newproject
+* Abstract method.
+
+ENDPROC
+PROCEDURE openproject
+* Abstract method.
+
+lparameters tcProjectPath
+
+ENDPROC
+PROCEDURE showoptions
+* Abstract method.
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+10[END RESERVED2]
+[START RESERVED3]
+*getrecentprojects Retrieves a list of recently opened projects
+*newproject Creates a new project
+*openproject Opens a project
+*showoptions 
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0NA16I
+[CLASS] themedexplorergroup
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] oOther
+[PARENT] startpageexplorerbar
+[START PROPERTIES]
+Left = 13
+Name = "oOther"
+Top = 420
+cmdFocus.Name = "cmdFocus"
+cntUserControls.Name = "cntUserControls"
+imgBackground.Name = "imgBackground"
+imgPicture.Name = "imgPicture"
+imgPicture.Picture = themedcontrols\images\extensions32.png
+imgTitle.Name = "imgTitle"
+lblTitle.Caption = "Other Items"
+lblTitle.Name = "lblTitle"
+linBottomBorder.Name = "linBottomBorder"
+linLeftBorder.Name = "linLeftBorder"
+linRightBorder.Name = "linRightBorder"
+shpMouseHandler.Name = "shpMouseHandler"
+state = 0
+type = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0LLZZH
+[CLASS] sfthemedbutton
+[CLASSLOC] sfthemedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedbutton1
+[PARENT] startpageexplorerbar.oOther.cntUserControls
+[START PROPERTIES]
+Left = 15
+Name = "Themedbutton1"
+Top = 18
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Height = 24
+imgIcon.Name = "imgIcon"
+imgIcon.Picture = themedcontrols\images\clock24.png
+imgIcon.Width = 24
+lblCaption.Caption = "Click me"
+lblCaption.Name = "lblCaption"
+shpMouseHandler.Name = "shpMouseHandler"
+shpMouseHandler.ToolTipText = ""
+type = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0NA16Q
+[CLASS] sfthemedbutton
+[CLASSLOC] sfthemedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] Themedbutton2
+[PARENT] startpageexplorerbar.oOther.cntUserControls
+[START PROPERTIES]
+Left = 15
+Name = "Themedbutton2"
+Top = 58
+cmdFocus.Name = "cmdFocus"
+imgBackgroundLeft.Name = "imgBackgroundLeft"
+imgBackgroundMiddle.Name = "imgBackgroundMiddle"
+imgBackgroundRight.Name = "imgBackgroundRight"
+imgIcon.Height = 24
+imgIcon.Name = "imgIcon"
+imgIcon.Picture = themedcontrols\images\email24.png
+imgIcon.Width = 24
+lblCaption.Caption = "Another button"
+lblCaption.Name = "lblCaption"
+shpMouseHandler.Name = "shpMouseHandler"
+shpMouseHandler.ToolTipText = ""
+type = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0N0U0A
+[CLASS] sfthemedexplorergroup
+[CLASSLOC] sfthemedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] oRecentProjects
+[PARENT] startpageexplorerbar
+[START PROPERTIES]
+Left = 13
+Name = "oRecentProjects"
+Top = 0
+caption = Recent Projects
+cmdFocus.Name = "cmdFocus"
+cntUserControls.Name = "cntUserControls"
+imgBackground.Name = "imgBackground"
+imgPicture.Name = "imgPicture"
+imgTitle.Name = "imgTitle"
+lblTitle.Name = "lblTitle"
+linBottomBorder.Name = "linBottomBorder"
+linLeftBorder.Name = "linLeftBorder"
+linRightBorder.Name = "linRightBorder"
+picture24 = c:\development\writing\sessions\themedcontrols\samples\themedcontrols\images\document24.png
+shpMouseHandler.Name = "shpMouseHandler"
+state = 0
+type = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0N0U0F
+[CLASS] themedexplorergroup
+[CLASSLOC] themedcontrols\vcx\themedcontrols.vcx
+[BASECLASS] container
+[OBJNAME] oTasks
+[PARENT] startpageexplorerbar
+[START PROPERTIES]
+Left = 13
+Name = "oTasks"
+Top = 210
+cmdFocus.Name = "cmdFocus"
+cntUserControls.Name = "cntUserControls"
+imgBackground.Name = "imgBackground"
+imgPicture.Name = "imgPicture"
+imgPicture.Picture = themedcontrols\images\tasks24.png
+imgTitle.Name = "imgTitle"
+lblTitle.Caption = "Tasks"
+lblTitle.Name = "lblTitle"
+linBottomBorder.Name = "linBottomBorder"
+linLeftBorder.Name = "linLeftBorder"
+linRightBorder.Name = "linRightBorder"
+shpMouseHandler.Name = "shpMouseHandler"
+state = 0
+[END PROPERTIES]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0N0U0T
+[CLASS] hyperlinklabel
+[CLASSLOC] samples.vcx
+[BASECLASS] label
+[OBJNAME] lblHelp
+[PARENT] startpageexplorerbar.oTasks.cntUserControls
+[START PROPERTIES]
+Caption = "Help"
+Left = 15
+Name = "lblHelp"
+Top = 73
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+help Projects
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0LLZZH
+[CLASS] hyperlinklabel
+[CLASSLOC] samples.vcx
+[BASECLASS] label
+[OBJNAME] lblNewProject
+[PARENT] startpageexplorerbar.oTasks.cntUserControls
+[START PROPERTIES]
+Caption = "New Project"
+Left = 15
+Name = "lblNewProject"
+Top = 33
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+This.Parent.Parent.Parent.NewProject()
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0LLZZH
+[CLASS] hyperlinklabel
+[CLASSLOC] samples.vcx
+[BASECLASS] label
+[OBJNAME] lblOpenProject
+[PARENT] startpageexplorerbar.oTasks.cntUserControls
+[START PROPERTIES]
+Caption = "Open Project"
+Left = 15
+Name = "lblOpenProject"
+Top = 13
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+This.Parent.Parent.Parent.OpenProject()
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2ZH0LLZZH
+[CLASS] hyperlinklabel
+[CLASSLOC] samples.vcx
+[BASECLASS] label
+[OBJNAME] lblOptions
+[PARENT] startpageexplorerbar.oTasks.cntUserControls
+[START PROPERTIES]
+Caption = "Options"
+Left = 15
+Name = "lblOptions"
+Top = 53
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE Click
+This.Parent.Parent.Parent.ShowOptions()
+
+ENDPROC
+[END METHODS]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] startpageexplorerbar
+[START PROPERTIES]
+Arial, 0, 9, 5, 15, 12, 32, 3, 0
+[END PROPERTIES]
+[EOF]

@@ -1,0 +1,86 @@
+SCCTEXT Version 4.0.0.2
+PLATFORM C(8,0),UNIQUEID C(10,0),TIMESTAMP N(10,0),CLASS M(4,0),CLASSLOC M(4,0),BASECLASS M(4,0),OBJNAME M(4,0),PARENT M(4,0),PROPERTIES M(4,0),PROTECTED M(4,0),METHODS M(4,0),OBJCODE M(4,0),OLE M(4,0),OLE2 M(4,0),RESERVED1 M(4,0),RESERVED2 M(4,0),RESERVED3 M(4,0),RESERVED4 M(4,0),RESERVED5 M(4,0),RESERVED6 M(4,0),RESERVED7 M(4,0),RESERVED8 M(4,0),USER M(4,0)
+1252
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] Class     
+[START RESERVED1]
+VERSION =   3.00[END RESERVED1]
+
+[ RECORD]
+[PLATFORM] WINDOWS 
+[UNIQUEID] _2DR0NI6L9
+[CLASS] sfcollection
+[CLASSLOC] sfctrls.vcx
+[BASECLASS] collection
+[OBJNAME] sfstack
+[START PROPERTIES]
+	<memberdata name="about" type="method" display="About"/>
+	<memberdata name="additem" type="method" display="AddItem"/>
+	<memberdata name="calledfromthisclass" type="method" display="CalledFromThisClass"/>
+	<memberdata name="cerrormessage" type="property" display="cErrorMessage"/>
+	<memberdata name="cleanup" type="method" display="Cleanup"/>
+	<memberdata name="clear" type="method" display="Clear"/>
+	<memberdata name="fillarrayrow" type="method" display="FillArrayRow" favorites="True"/>
+	<memberdata name="fillcollection" type="method" display="FillCollection"/>
+	<memberdata name="getarray" type="method" display="GetArray"/>
+	<memberdata name="lerroroccurred" type="property" display="lErrorOccurred"/>
+	<memberdata name="lfilloninit" type="property" display="lFillOnInit" favorites="True"/>
+	<memberdata name="lrelease" type="property" display="lRelease"/>
+	<memberdata name="oexception" type="property" display="oException"/>
+	<memberdata name="pop" type="method" display="Pop"/>
+	<memberdata name="push" type="method" display="Push"/>
+	<memberdata name="release" type="method" display="Release"/>
+	<memberdata name="releasemembers" type="method" display="ReleaseMembers"/>
+	<memberdata name="removeitem" type="method" display="RemoveItem"/>
+	<memberdata name="savecollection" type="method" display="SaveCollection"/>
+	<memberdata name="saveitem" type="method" display="SaveItem" favorites="True"/>
+	<memberdata name="utopvalue" display="uTopValue"/></VFPData>
+Name = "sfstack"
+_memberdata =     1499<VFPData>
+utopvalue = 
+[END PROPERTIES]
+[START METHODS]
+PROCEDURE pop
+local luValue
+with This
+	if .Count > 0
+		luValue = .Item(.Count)
+		.Remove(.Count)
+	else
+		luValue = .NULL.
+	endif This.Count > 0
+endwith
+return luValue
+
+ENDPROC
+PROCEDURE push
+lparameters tuValue, ;
+	tcKey
+if pcount() = 1
+	This.Add(tuValue)
+else
+	This.Add(tuValue, tcKey)
+endif pcount() = 1
+This.uTopValue = tuValue
+
+ENDPROC
+[END METHODS]
+[START RESERVED1]
+Class[END RESERVED1]
+[START RESERVED2]
+1[END RESERVED2]
+[START RESERVED3]
+*pop Pops an item off the stack
+*push Pushes an item onto the stack
+utopvalue The value at the top of the stack
+[END RESERVED3]
+[START RESERVED6]
+Pixels[END RESERVED6]
+
+[ RECORD]
+[PLATFORM] COMMENT 
+[UNIQUEID] RESERVED  
+[OBJNAME] sfstack
+[EOF]

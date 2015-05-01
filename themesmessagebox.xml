@@ -1,0 +1,144 @@
+<?xml version = "1.0" encoding="Windows-1252" standalone="yes"?>
+<VFPDataSet>
+	<xsd:schema id="VFPDataSet" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="VFPDataSet" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="ThemesDetails" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="themeid" type="xsd:int"/>
+								<xsd:element name="membername">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="240"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="membertype">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="1"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="membervalue" type="xsd:int"/>
+								<xsd:element name="memberimage">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:base64Binary">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="imageext">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="3"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+				<xsd:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<ThemesDetails>
+		<themeid>1</themeid>
+		<membername>COLOR_GRADIENT_LIGHT</membername>
+                <membertype>O</membertype>
+		<membervalue>16440004</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>1</themeid>
+		<membername>COLOR_GRADIENT_DARK</membername>
+                <membertype>O</membertype>
+		<membervalue>14986373</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>2</themeid>
+		<membername>COLOR_GRADIENT_LIGHT</membername>
+                <membertype>O</membertype>
+		<membervalue>13298918</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>2</themeid>
+		<membername>COLOR_GRADIENT_DARK</membername>
+                <membertype>O</membertype>
+		<membervalue>9224369</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>3</themeid>
+		<membername>COLOR_GRADIENT_LIGHT</membername>
+                <membertype>O</membertype>
+		<membervalue>15392734</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>3</themeid>
+		<membername>COLOR_GRADIENT_DARK</membername>
+                <membertype>O</membertype>
+		<membervalue>11637653</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>4</themeid>
+		<membername>COLOR_GRADIENT_LIGHT</membername>
+                <membertype>O</membertype>
+		<membervalue>16250614</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>4</themeid>
+		<membername>COLOR_GRADIENT_DARK</membername>
+                <membertype>O</membertype>
+		<membervalue>13815241</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>5</themeid>
+		<membername>COLOR_GRADIENT_LIGHT</membername>
+                <membertype>O</membertype>
+		<membervalue>16771288</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>5</themeid>
+		<membername>COLOR_GRADIENT_DARK</membername>
+                <membertype>O</membertype>
+		<membervalue>16766388</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>6</themeid>
+		<membername>COLOR_GRADIENT_LIGHT</membername>
+                <membertype>O</membertype>
+		<membervalue>16181991</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+	<ThemesDetails>
+		<themeid>6</themeid>
+		<membername>COLOR_GRADIENT_DARK</membername>
+                <membertype>O</membertype>
+		<membervalue>13879751</membervalue>
+		<memberimage/>
+                <imageext />
+	</ThemesDetails>
+</VFPDataSet>
