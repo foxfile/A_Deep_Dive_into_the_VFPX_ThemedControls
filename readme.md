@@ -3,6 +3,8 @@
 *by Doug Hennig*
  
 One of the coolest projects in VFPX is ThemedControls by Emerson Santon Reed (the 2009 Southwest Fox Ceil Silver Ambassador). The ThemedControls project consists of eight controls-ThemedButton, ThemedContainer, ThemedExplorerBar, ThemedForm, ThemedOutlookNavBar, ThemedTitlePageFrame, ThemedToolbox, and ThemedZoomNavBar-that allow you to provide the modern interface users expect in today's applications. This document looks at these controls in detail and shows how to use them in your own applications.
+
+[Read the article here on Github](https://github.com/foxfile/A_Deep_Dive_into_the_VFPX_ThemedControls/blob/master/themedcontrols.pdf) or [Download the PDF](http://doughennig.com/papers/Pub/ThemedControls.pdf)
  
 ----
  
